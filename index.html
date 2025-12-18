@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport" />
     <title>Sapeco S.A. - Obras Públicas y Montajes Industriales</title>
 
     <!-- Fonts -->
@@ -22,12 +22,7 @@
     <header id="header">
         <div class="header-container">
             <div class="logo-container">
-                <div class="logo-svg">
-                    <svg fill="currentColor" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20.291 20L0 20.103 20.188 0l.103.103L40 20.103 20.291 20z"></path>
-                        <path d="M20.188 20.207L0 40V20.31h.103L20.188 20.207z" fill="#050840"></path>
-                    </svg>
-                </div>
+                <img src="images/logo.png" alt="Sapeco S.A." class="logo-img">
                 <h2 class="empresa-nombre" id="empresa-nombre">Sapeco S.A.</h2>
             </div>
             <nav class="desktop-nav">
@@ -46,21 +41,29 @@
 
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobile-menu">
+            <button class="mobile-menu-close" id="mobile-menu-close">
+                <span class="material-symbols-outlined">close</span>
+            </button>
             <nav>
                 <a href="#servicios">Servicios</a>
                 <a href="#proyectos">Proyectos</a>
                 <a href="#nosotros">Nosotros</a>
                 <a href="#contacto">Contacto</a>
-                <button class="btn-primary" onclick="scrollToSection('contacto')" style="width: 100%; margin-top: 0.5rem;">
+                <button class="btn-primary" onclick="scrollToSection('contacto')">
                     Solicitar Cotización
                 </button>
             </nav>
+            <div class="mobile-menu-footer">
+                Creado por MW Studio
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="hero-background" style="background-image: url('https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg');"></div>
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="hero-video.mp4" type="video/mp4">
+        </video>
         <div class="hero-overlay"></div>
 
         <div class="hero-content">
@@ -68,12 +71,11 @@
                 Excelencia en Obras Públicas
             </span>
             <h1 class="hero-title animate-fade-in-up">
-                INGENIERÍA SÓLIDA<br />
-                <span class="gradient-text">PARA EL FUTURO</span>
+                TRES DÉCADAS<br />
+                <span class="italic-text">CONSTRUYENDO</span> CONFIANZA
             </h1>
             <p class="hero-description animate-fade-in-up delay-200" id="hero-description">
-                Más de 30 años construyendo infraestructura crítica. Soluciones integrales en montajes industriales y
-                obras civiles con capacidad operativa de primer nivel.
+                Infraestructura crítica que funciona. Montajes industriales que cumplen. Obras civiles que permanecen.
             </p>
             <div class="hero-buttons animate-fade-in-up delay-300">
                 <button class="btn-primary large" onclick="scrollToSection('proyectos')">
@@ -229,12 +231,7 @@
             <div class="footer-grid">
                 <div>
                     <div class="footer-brand">
-                        <div class="logo-svg">
-                            <svg fill="currentColor" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.291 20L0 20.103 20.188 0l.103.103L40 20.103 20.291 20z"></path>
-                                <path d="M20.188 20.207L0 40V20.31h.103L20.188 20.207z" fill="#050840"></path>
-                            </svg>
-                        </div>
+                        <img src="images/logo.png" alt="Sapeco S.A." class="logo-img">
                         <span id="footer-nombre">Sapeco S.A.</span>
                     </div>
                     <p class="footer-description" id="footer-descripcion">

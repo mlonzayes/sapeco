@@ -376,7 +376,7 @@ function renderEmpresa() {
 // Renderizar servicios
 function renderServicios() {
     const serviciosData = [
-        { icon: 'water_drop', title: 'Redes de Agua', desc: 'Instalación de redes de agua potable con cañería de polietileno unido por electrofusión.', items: ['Polietileno clase 10', 'Electrofusión'] },
+        { icon: 'water_drop', title: 'Redes de Agua Potable', desc: 'Instalación de redes de agua potable con cañería de polietileno unido por electrofusión.', items: ['Polietileno clase 10', 'Electrofusión'] },
         { icon: 'delete', title: 'Redes Cloacales', desc: 'Ejecución de redes de cloacas con cañería de PVC junta segura y bocas de registro.', items: ['PVC junta segura', 'Bocas premoldeadas'] },
         { icon: 'local_fire_department', title: 'Redes de Gas', desc: 'Gasoductos y redes de gas natural con provisión de materiales y accesorios.', items: ['Gas natural', 'Plantas reguladoras'] },
         { icon: 'bolt', title: 'Redes Eléctricas', desc: 'Tendido eléctrico de media y baja tensión con cables y empalmes certificados.', items: ['Media tensión', 'Baja tensión'] },
@@ -631,16 +631,47 @@ function observeElements() {
 function setupMobileMenu() {
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const menuCloseBtn = document.getElementById('mobile-menu-close');
 
     if (menuBtn && mobileMenu) {
         menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('show');
+            mobileMenu.classList.add('show');
+            document.body.classList.add('menu-open');
+            document.documentElement.classList.add('menu-open');
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
         });
+
+        // Cerrar con botón X
+        if (menuCloseBtn) {
+            menuCloseBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('show');
+                document.body.classList.remove('menu-open');
+                document.documentElement.classList.remove('menu-open');
+                document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
+            });
+        }
 
         // Cerrar al hacer click en un enlace
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('show');
+                document.body.classList.remove('menu-open');
+                document.documentElement.classList.remove('menu-open');
+                document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
+            });
+        });
+
+        // Cerrar al hacer click en el botón del menú
+        mobileMenu.querySelectorAll('.btn-primary').forEach(btn => {
+            btn.addEventListener('click', () => {
+                mobileMenu.classList.remove('show');
+                document.body.classList.remove('menu-open');
+                document.documentElement.classList.remove('menu-open');
+                document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
             });
         });
     }
@@ -649,19 +680,9 @@ function setupMobileMenu() {
 // Header scroll effect
 function setupHeaderScroll() {
     const header = document.getElementById('header');
-    let lastScroll = 0;
 
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-
-        if (currentScroll > 100) {
-            header.classList.add('shadow-lg');
-        } else {
-            header.classList.remove('shadow-lg');
-        }
-
-        lastScroll = currentScroll;
-    });
+    // Mostrar header siempre
+    header.classList.add('visible');
 }
 
 // Parallax effect
