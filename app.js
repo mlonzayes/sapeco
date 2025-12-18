@@ -1,0 +1,687 @@
+// Variables globales
+let displayedObras = 6;
+let currentFilter = 'all';
+
+// Datos embebidos
+const sapecoData = {
+    "empresa": {
+        "nombre": "Sapeco S.A.",
+        "slogan": "Obras Publicas - Montajes Industriales",
+        "fundacion": 1994,
+        "descripcion": "Empresa creada con el fin de canalizar las inquietudes de sus socios fundadores, con la aspiración de desarrollar obras de infraestructura que tengan como fin último un servicio a la comunidad mediante el mejoramiento de su calidad de vida.",
+        "experiencia": "Obras públicas y privadas, siendo estas últimas fundamentalmente su ámbito natural de trabajo.",
+        "logo": "",
+        "servicios": [
+            "Obras de Infraestructura",
+            "Agua",
+            "Cloaca",
+            "Gas",
+            "Telefonía",
+            "Electricidad"
+        ],
+        "comitentes": [
+            "Organismos públicos",
+            "Consorcios vecinales con supervisión de organismos públicos"
+        ],
+        "tipos_obras": [
+            "Construcciones civiles",
+            "Desagües cloacales",
+            "Extensión de agua corriente",
+            "Gasoductos",
+            "Redes de gas natural",
+            "Plantas reguladoras de presión",
+            "Tendido eléctrico de media y baja tensión"
+        ],
+        "imagenes_generales": []
+    },
+    "contacto": {
+        "presidente": "Pablo Javier Perez",
+        "direccion": "Vucetich 968 – Wilde",
+        "telefono_oficina": "4227-6401",
+        "telefono_celular": "+54 11 52284318",
+        "email": "sapecosa@gmail.com"
+    },
+    "emprendimientos_zona_sur": [
+        { "id": "las-golondrinas", "nombre": "Las Golondrinas", "imagen_principal": "", "imagenes": [] },
+        { "id": "dorrego-reserva-urbana", "nombre": "Dorrego Reserva Urbana", "imagen_principal": "", "imagenes": [] },
+        { "id": "nuevo-quilmes", "nombre": "Nuevo Quilmes", "imagen_principal": "", "imagenes": [] },
+        { "id": "los-troncos", "nombre": "Los Troncos", "imagen_principal": "", "imagenes": [] },
+        { "id": "hudson-park", "nombre": "Hudson Park", "imagen_principal": "", "imagenes": [] },
+        { "id": "barrancas-de-iraola", "nombre": "Barrancas de Iraola", "imagen_principal": "", "imagenes": [] },
+        { "id": "barrancas-de-guido", "nombre": "Barrancas de Guido", "imagen_principal": "", "imagenes": [] },
+        { "id": "greenville", "nombre": "Greenville", "imagen_principal": "", "imagenes": [] },
+        { "id": "lagoon-hudson", "nombre": "Lagoon Hudson", "imagen_principal": "", "imagenes": [] },
+        { "id": "puerto-nizuc", "nombre": "Puerto Nizuc", "imagen_principal": "", "imagenes": [] }
+    ],
+    "obras_realizadas": [
+        {
+            "id": "puerto-nizuc-etapa-dos",
+            "nombre": "Puerto Nizuc - Ejecución Etapa Dos",
+            "slug": "puerto-nizuc-etapa-dos",
+            "ubicacion": "Hudson",
+            "periodo": "2024-Actualidad",
+            "año_inicio": 2024,
+            "año_fin": null,
+            "en_curso": true,
+            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuAZ5r5ioa8IAs3pJQ5VEasNhaBzMvaYxDaug5Viww1JdqbMImdtJEwR2b5YrX7zLHtnkSlZjecYK816Ip9676xySQF1i8EFiA8f12CQxH0f-9ATRlisUnGUNMwIbENsMQErOFABwqsMe4yJb03d_Jw8TvxGSbhxYmXSfNCRdft1oX-_0cCiSUsoB8oIrsBaFo1L3jGMbvF0GMVlvQzNPAds9IA2mmL0dAxck9ZBggHq6Pu6Nh29jmBjpYBsMtV0ee-oG9nJP9WRN16y",
+            "imagenes": [],
+            "trabajos": [
+                {
+                    "tipo": "Red de Agua",
+                    "cantidad": "4.600,00 Mts Aprox",
+                    "detalle": ["3.500,00 Mts cañería de polietileno Ø75", "1.200,00 Mts cañería de polietileno Ø160", "3.500,00 Mts cañería de polietileno Ø63", "Todos unidos por electrofusión"]
+                }
+            ]
+        },
+        {
+            "id": "puerto-nizuc-etapa-comercial",
+            "nombre": "Puerto Nizuc - Ejecución Etapa Comercial",
+            "slug": "puerto-nizuc-etapa-comercial",
+            "ubicacion": "Hudson",
+            "periodo": "2022-2023",
+            "año_inicio": 2022,
+            "año_fin": 2023,
+            "en_curso": false,
+            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuDumrov7uV5WiH1y_jrUS5O6y7Muo0Im_yGIyRfBLqTTfWbD5cCNLh81CMsZR6swm89haYkpQnKt5S3sd-fxoYJ9SYRCee9ZQvdT3hTpPAtDHCefeOPBboZoRungRPn-m1QNqR78IoOQXFxY_EptMKkV4bYMceIbNE-1Mst9-ccZJfoKow_ryE_08wW617jLbB9WuhTPJGrXsBrEavdcxYOOqu6i0saI5uJOPTx8ZaIvXndKIv85pIvBbxU96oDnr1yXtdLvbWWkci3",
+            "imagenes": [],
+            "trabajos": [
+                { "tipo": "Red de Agua", "cantidad": "4.600,00 Mts Aprox", "detalle": ["Cañería de polietileno Ø160 unido por electrofusión"] }
+            ]
+        },
+        {
+            "id": "azurra-tortugas",
+            "nombre": "Azurra Tortugas",
+            "slug": "azurra-tortugas",
+            "ubicacion": "Tortugas",
+            "periodo": "2021-Actualidad",
+            "año_inicio": 2021,
+            "año_fin": null,
+            "en_curso": true,
+            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuAkmpD9mVnTWpgzhen2hsAuv0iXyJOX8hx6tkuxeapITf2f4XRQKmgHlNK9YE_jTWhk8eLHS4BvOEvYV0J5usvWp1BBtUIf3dWgBwqIE_0frzf571jlEAxiQpaoBPZvj0mE5q5q5tUXZrlBeseeE5_EqicaiC0IHdz2A80zsHG72nsJCgDhfX_pEUgowyWjQd4KUU66GkExNo47W4JzuQw694xPNKOxdZmu8Bs7hYAjSVQF2AmYKM_atr33tGowBlA9LpJ_hKXbA2ri",
+            "imagenes": [],
+            "trabajos": [
+                { "tipo": "Red de Agua", "cantidad": "9.490,00 Mts", "detalle": ["Cañería de polietileno unido por electrofusión"] },
+                { "tipo": "Red de Cloaca", "cantidad": "9.490,00 Mts", "detalle": ["Cañería de PVC junta segura", "Bocas de registro premoldeadas"] },
+                { "tipo": "Red Eléctrica - Iluminación", "cantidad": null, "detalle": ["Cables de 3*240/120", "Buzones", "Empalmes"] },
+                { "tipo": "Red de Tritubo", "cantidad": null, "detalle": ["Tritubos", "Cajas premoldeadas", "Hilo guía"] }
+            ]
+        },
+        {
+            "id": "fincas-don-victor",
+            "nombre": "Fincas Don Victor",
+            "slug": "fincas-don-victor",
+            "ubicacion": "Villa Elisa",
+            "periodo": "2021-2022",
+            "año_inicio": 2021,
+            "año_fin": 2022,
+            "en_curso": false,
+            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuB-XvKxe53m2KCrcki0pCBR27UU4Tb7mWBbWUnAwd9zlleLSpLQI-tKXbIcpU9ok4XGaVHBlqoJWYYk6GpGvXkz9MTvLGWEQrJM4NIjSDzVvU7Z9H6tg3Y07My9WSupDBnvbHDFaPTMVe5F00bfS59teLb_bydrDrjRRySAX04x74xQq2Jx_FVVzN8_wGu3pRgF5CP6w0Dwbi6B8CQYhVcxud7zlCVC8hf6qopbBaiOW8zpa0C0M966XdOvFOX4iXo_RGoLvxmbc5Yi",
+            "imagenes": [],
+            "trabajos": [
+                { "tipo": "Movimiento de suelo y calles", "cantidad": null, "detalle": ["Apertura de calles y entoscado", "Hormigón de base", "Cunetas e intertrabado"] },
+                { "tipo": "Red de Agua", "cantidad": null, "detalle": ["Cañería de polietileno unido por electrofusión"] },
+                { "tipo": "Red de Cloaca", "cantidad": null, "detalle": ["Cañería de PVC junta segura", "Bocas de registro premoldeadas"] },
+                { "tipo": "Red de Pluvial", "cantidad": null, "detalle": ["Cañería de PVC junta segura", "Bocas de registro premoldeadas"] },
+                { "tipo": "Red Eléctrica", "cantidad": null, "detalle": ["Cables de 3*240/120", "Buzones de 3 y 4 vías", "Empalmes"] },
+                { "tipo": "Red de Tritubo", "cantidad": null, "detalle": ["Tritubos", "Cajas premoldeadas", "Hilo guía"] }
+            ]
+        },
+        {
+            "id": "parque-de-la-innovacion",
+            "nombre": "Parque de la Innovación",
+            "slug": "parque-de-la-innovacion",
+            "ubicacion": "CABA",
+            "periodo": "2021-2022",
+            "año_inicio": 2021,
+            "año_fin": 2022,
+            "en_curso": false,
+            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuAHmcqO50EHb0ogPv9yhIt53GI00rps_Afsd4SKo3N6N6VF-P-XAmQpH-GHOxLOXDAKznx-ExriGCmKPPaf1Tp6fNj_Pn2FQA5e0RLN-d_k051qscIbiNuw1FO7TxSizyeWJdl4X9s1Jbfluq6NtY3_7ImkhJ-lwBpA_5SVsFpvbl3ywHa5pfeocQ4GSTppzGaMiZmGy4kXktjjqwhmM6DEpda4wnWGYhzvNmcJI2EyKoWZyAofc2RmSx3ScV6OiR4M5sCvTb8FOy60",
+            "imagenes": [],
+            "trabajos": [
+                { "tipo": "Movimiento de suelo y calles", "cantidad": null, "detalle": ["Apertura de calles y entoscado", "Hormigón de base", "Cunetas e intertrabado"] },
+                { "tipo": "Red de Cloaca", "cantidad": null, "detalle": ["Cañería de PVC junta segura", "Bocas de registro premoldeadas"] },
+                { "tipo": "Red de Agua", "cantidad": null, "detalle": ["Cañería de polietileno unido por electrofusión"] }
+            ]
+        },
+        {
+            "id": "poligono-21",
+            "nombre": "Polígono 21",
+            "slug": "poligono-21",
+            "ubicacion": "Berazategui",
+            "periodo": "2020-2021",
+            "año_inicio": 2020,
+            "año_fin": 2021,
+            "en_curso": false,
+            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuDc5mxW-wi2QFLeP3EbV3yKTbRlnJtWG9f70OlFGS-PZMbpy0yaAiV96CUIqQBZ7eX-jd2Z6jHSxaik0jkHzl_f1i68X5AGC4wOi7KW5BwFR1Q4W38P1qFI6SVTNjYv7_sBnjAjXHGHg7cZAwuklMtsNMD30VRf1icjAfF_rzsNFKgcoHwcTq2L-LXdEgRQI8ow5_y6AK_-fQ05vu6JbpY1JC8tZfaLQqV9dos0pdwFOGMrt3Q20nPBj5o2iUxodcZAg_iYahZJXiS2",
+            "imagenes": [],
+            "trabajos": [
+                { "tipo": "Movimiento de suelo y calles", "cantidad": null, "detalle": ["Apertura de calles y entoscado", "Hormigón de base", "Cunetas e intertrabado"] },
+                { "tipo": "Red Eléctrica", "cantidad": null, "detalle": ["Cables de 3*240/120", "Buzones y empalmes"] },
+                { "tipo": "Red de Agua", "cantidad": null, "detalle": ["Cañería de polietileno unido por electrofusión"] },
+                { "tipo": "Red de Cloaca", "cantidad": null, "detalle": ["Cañería de PVC junta segura", "Bocas de registro premoldeadas"] }
+            ]
+        },
+        {
+            "id": "barrio-iby-ypf",
+            "nombre": "Barrio IBY (YPF)",
+            "slug": "barrio-iby-ypf",
+            "ubicacion": "Villa 31 Buenos Aires",
+            "periodo": "2019-2020",
+            "año_inicio": 2019,
+            "año_fin": 2020,
+            "en_curso": false,
+            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuCEP9tKfRC25Urb4Zlnu53GMjvQxBszLZUFF4cpf6W7NH5M_l6mEMRua3HjHU0D4R_uHysxh4rlbAuGu2Rrx_6BXgJWx8cGpoViM3EYyDcSkimmt854K187pjeGM3uy_iSqRkVR43uPmr2KBXky21NP_ocfQ0cZZ50Wxx6Y7aNxOYKuATSoVWbDADc1k-UvPJqC10JBnKtW9JfiAbFv2aUro0xuKqP4xFhUOl5dJNtmTfngJ7QEkZnDEfXv5luBYE5cAt59FjU0P5JA",
+            "imagenes": [],
+            "trabajos": [
+                { "tipo": "Red de Agua", "cantidad": null, "detalle": ["Cañería de polietileno unido por electrofusión"] },
+                { "tipo": "Red de Cloaca", "cantidad": null, "detalle": ["Cañería de PVC junta segura", "Bocas de registro premoldeadas"] },
+                { "tipo": "Red de Pluvial", "cantidad": null, "detalle": ["Cañería de PVC junta segura", "Bocas de registro premoldeadas"] },
+                { "tipo": "Red Eléctrica", "cantidad": null, "detalle": ["Cables de 3*240/120", "Buzones de 3 y 4 vías", "Empalmes"] },
+                { "tipo": "Red de Tritubo", "cantidad": null, "detalle": ["Tritubos", "Cajas premoldeadas", "Hilo guía"] }
+            ]
+        },
+        {
+            "id": "greenville-media-tension",
+            "nombre": "Greenville - Media Tensión",
+            "slug": "greenville-media-tension",
+            "ubicacion": "Berazategui",
+            "periodo": "2019-2020",
+            "año_inicio": 2019,
+            "año_fin": 2020,
+            "en_curso": false,
+            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuAZ5r5ioa8IAs3pJQ5VEasNhaBzMvaYxDaug5Viww1JdqbMImdtJEwR2b5YrX7zLHtnkSlZjecYK816Ip9676xySQF1i8EFiA8f12CQxH0f-9ATRlisUnGUNMwIbENsMQErOFABwqsMe4yJb03d_Jw8TvxGSbhxYmXSfNCRdft1oX-_0cCiSUsoB8oIrsBaFo1L3jGMbvF0GMVlvQzNPAds9IA2mmL0dAxck9ZBggHq6Pu6Nh29jmBjpYBsMtV0ee-oG9nJP9WRN16y",
+            "imagenes": [],
+            "trabajos": [
+                { "tipo": "Red Eléctrica de media tensión", "cantidad": null, "detalle": ["Ejecución en Hotel", "Ejecución e instalación de cámaras transformadoras"] }
+            ]
+        },
+        {
+            "id": "barrio-santa-clara",
+            "nombre": "Barrio Santa Clara",
+            "slug": "barrio-santa-clara",
+            "ubicacion": "Canning",
+            "periodo": "2016-2017",
+            "año_inicio": 2016,
+            "año_fin": 2017,
+            "en_curso": false,
+            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuDumrov7uV5WiH1y_jrUS5O6y7Muo0Im_yGIyRfBLqTTfWbD5cCNLh81CMsZR6swm89haYkpQnKt5S3sd-fxoYJ9SYRCee9ZQvdT3hTpPAtDHCefeOPBboZoRungRPn-m1QNqR78IoOQXFxY_EptMKkV4bYMceIbNE-1Mst9-ccZJfoKow_ryE_08wW617jLbB9WuhTPJGrXsBrEavdcxYOOqu6i0saI5uJOPTx8ZaIvXndKIv85pIvBbxU96oDnr1yXtdLvbWWkci3",
+            "imagenes": [],
+            "trabajos": [
+                { "tipo": "Red de Cloacas", "cantidad": "11.750,00 mts", "detalle": ["Zanjeo", "Provisión de Materiales", "Bocas de Registro premoldeadas", "Tapas Reglamentarias"] },
+                { "tipo": "Red de Agua", "cantidad": "11.750 mts", "detalle": ["Zanjeo", "Provisión de Materiales", "Polietileno clase 10 unido por electrofusión", "Válvulas"] }
+            ]
+        },
+        {
+            "id": "hudson-park",
+            "nombre": "Hudson Park",
+            "slug": "hudson-park",
+            "ubicacion": "Berazategui",
+            "periodo": "2016",
+            "año_inicio": 2016,
+            "año_fin": 2016,
+            "en_curso": false,
+            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuAkmpD9mVnTWpgzhen2hsAuv0iXyJOX8hx6tkuxeapITf2f4XRQKmgHlNK9YE_jTWhk8eLHS4BvOEvYV0J5usvWp1BBtUIf3dWgBwqIE_0frzf571jlEAxiQpaoBPZvj0mE5q5q5tUXZrlBeseeE5_EqicaiC0IHdz2A80zsHG72nsJCgDhfX_pEUgowyWjQd4KUU66GkExNo47W4JzuQw694xPNKOxdZmu8Bs7hYAjSVQF2AmYKM_atr33tGowBlA9LpJ_hKXbA2ri",
+            "imagenes": [],
+            "trabajos": [
+                { "tipo": "Red de Cloacas", "cantidad": "7.500,00 mts", "detalle": ["Zanjeo", "Provisión de Materiales", "Bocas de Registro premoldeadas", "Tapas Reglamentarias"] },
+                { "tipo": "Red de Agua", "cantidad": "7.500,00 mts", "detalle": ["Zanjeo", "Provisión de Materiales", "Polietileno clase 10 unido por electrofusión", "Válvulas"] },
+                { "tipo": "Red de Gas Natural", "cantidad": "14.000,00 mts", "detalle": ["Cañería", "Zanjeo", "Provisión de Materiales", "Accesorios", "Malla de advertencia"] }
+            ]
+        },
+        {
+            "id": "barrio-las-golondrinas",
+            "nombre": "Barrio Las Golondrinas",
+            "slug": "barrio-las-golondrinas",
+            "ubicacion": "Berazategui",
+            "periodo": "2013-2015",
+            "año_inicio": 2013,
+            "año_fin": 2015,
+            "en_curso": false,
+            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuB-XvKxe53m2KCrcki0pCBR27UU4Tb7mWBbWUnAwd9zlleLSpLQI-tKXbIcpU9ok4XGaVHBlqoJWYYk6GpGvXkz9MTvLGWEQrJM4NIjSDzVvU7Z9H6tg3Y07My9WSupDBnvbHDFaPTMVe5F00bfS59teLb_bydrDrjRRySAX04x74xQq2Jx_FVVzN8_wGu3pRgF5CP6w0Dwbi6B8CQYhVcxud7zlCVC8hf6qopbBaiOW8zpa0C0M966XdOvFOX4iXo_RGoLvxmbc5Yi",
+            "imagenes": [],
+            "trabajos": [
+                { "tipo": "Red de Cloacas", "cantidad": "4.200,00 mts", "detalle": ["Zanjeo", "Provisión de Materiales", "Bocas de Registro PREMOLDEADAS", "Tapas Reglamentarias hierro fundido"] },
+                { "tipo": "Red de Agua", "cantidad": "4.200,00 mts", "detalle": ["Zanjeo", "Provisión de Materiales", "Polietileno clase 10 junta segura", "Válvulas", "Servicios", "Medidores"] },
+                { "tipo": "Red de Gas Natural", "cantidad": "7.200,00 mts", "detalle": ["Zanjeo", "Provisión de Materiales", "Accesorios", "Malla de advertencia"] },
+                { "tipo": "Red Eléctrica de media y baja tensión", "cantidad": "7.000,00 mts", "detalle": ["Tendido de tritubo"] }
+            ]
+        },
+        {
+            "id": "nuevo-quilmes",
+            "nombre": "Nuevo Quilmes",
+            "slug": "nuevo-quilmes",
+            "ubicacion": "Quilmes",
+            "periodo": "2010-2012",
+            "año_inicio": 2010,
+            "año_fin": 2012,
+            "en_curso": false,
+            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuAHmcqO50EHb0ogPv9yhIt53GI00rps_Afsd4SKo3N6N6VF-P-XAmQpH-GHOxLOXDAKznx-ExriGCmKPPaf1Tp6fNj_Pn2FQA5e0RLN-d_k051qscIbiNuw1FO7TxSizyeWJdl4X9s1Jbfluq6NtY3_7ImkhJ-lwBpA_5SVsFpvbl3ywHa5pfeocQ4GSTppzGaMiZmGy4kXktjjqwhmM6DEpda4wnWGYhzvNmcJI2EyKoWZyAofc2RmSx3ScV6OiR4M5sCvTb8FOy60",
+            "imagenes": [],
+            "trabajos": [
+                { "tipo": "Red de Cloacas", "cantidad": "11.000,00 mts", "detalle": ["Zanjeo", "Provisión de Materiales", "Bocas de Registro PREMOLDEADAS", "Tapas Reglamentarias hierro fundido"] },
+                { "tipo": "Red de Agua", "cantidad": "11.000,00 mts", "detalle": ["Zanjeo", "Provisión de Materiales", "P.V.C. clase 10 junta segura", "Válvulas", "Servicios", "Medidores"] }
+            ]
+        }
+    ],
+    "equipamiento": {
+        "equipo_zanjeo": [
+            { "nombre": "Mini-cargadora John Deere MD: 8875 c/ zanjadora", "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuB-XvKxe53m2KCrcki0pCBR27UU4Tb7mWBbWUnAwd9zlleLSpLQI-tKXbIcpU9ok4XGaVHBlqoJWYYk6GpGvXkz9MTvLGWEQrJM4NIjSDzVvU7Z9H6tg3Y07My9WSupDBnvbHDFaPTMVe5F00bfS59teLb_bydrDrjRRySAX04x74xQq2Jx_FVVzN8_wGu3pRgF5CP6w0Dwbi6B8CQYhVcxud7zlCVC8hf6qopbBaiOW8zpa0C0M966XdOvFOX4iXo_RGoLvxmbc5Yi" },
+            { "nombre": "Retro pala John Deere MD 310 J", "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuAHmcqO50EHb0ogPv9yhIt53GI00rps_Afsd4SKo3N6N6VF-P-XAmQpH-GHOxLOXDAKznx-ExriGCmKPPaf1Tp6fNj_Pn2FQA5e0RLN-d_k051qscIbiNuw1FO7TxSizyeWJdl4X9s1Jbfluq6NtY3_7ImkhJ-lwBpA_5SVsFpvbl3ywHa5pfeocQ4GSTppzGaMiZmGy4kXktjjqwhmM6DEpda4wnWGYhzvNmcJI2EyKoWZyAofc2RmSx3ScV6OiR4M5sCvTb8FOy60" },
+            { "nombre": "Retro excavadora John Deere MD 120 D", "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuDc5mxW-wi2QFLeP3EbV3yKTbRlnJtWG9f70OlFGS-PZMbpy0yaAiV96CUIqQBZ7eX-jd2Z6jHSxaik0jkHzl_f1i68X5AGC4wOi7KW5BwFR1Q4W38P1qFI6SVTNjYv7_sBnjAjXHGHg7cZAwuklMtsNMD30VRf1icjAfF_rzsNFKgcoHwcTq2L-LXdEgRQI8ow5_y6AK_-fQ05vu6JbpY1JC8tZfaLQqV9dos0pdwFOGMrt3Q20nPBj5o2iUxodcZAg_iYahZJXiS2" },
+            { "nombre": "Motocompresor Cetec", "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuCEP9tKfRC25Urb4Zlnu53GMjvQxBszLZUFF4cpf6W7NH5M_l6mEMRua3HjHU0D4R_uHysxh4rlbAuGu2Rrx_6BXgJWx8cGpoViM3EYyDcSkimmt854K187pjeGM3uy_iSqRkVR43uPmr2KBXky21NP_ocfQ0cZZ50Wxx6Y7aNxOYKuATSoVWbDADc1k-UvPJqC10JBnKtW9JfiAbFv2aUro0xuKqP4xFhUOl5dJNtmTfngJ7QEkZnDEfXv5luBYE5cAt59FjU0P5JA" }
+        ],
+        "equipo_pruebas": [
+            { "nombre": "Tanque aguatero de 3000 litros", "imagen": "" },
+            { "nombre": "Nivel óptico marca Petax completo", "imagen": "" },
+            { "nombre": "Generadores trifásicos y monofásicos", "imagen": "" },
+            { "nombre": "Bombas Flygt", "imagen": "" }
+        ],
+        "imagenes_galeria": []
+    },
+    "referencias": {
+        "proveedores": [
+            { "nombre": "Plastiferro S.A.", "direccion": "Av. General Paz Nº 8950 CABA", "telefono": "1569955409" },
+            { "nombre": "Celec S.A.", "direccion": "Gdor. Oliden Nº 1669 Valentín Alsina", "telefono": "42185500" },
+            { "nombre": "Ital-Vinil S.A.", "direccion": "Av. Otto Bermberg 1885 Parque Ind. Hudson", "telefono": "32202791" },
+            { "nombre": "SMG Art", "direccion": "Av. Mitre 1325 CABA", "telefono": "8103333013" },
+            { "nombre": "General Plastics", "direccion": "Roberto Wernicke N° 573", "telefono": "47633370" }
+        ],
+        "bancarias": {
+            "banco": "Banco Francés",
+            "sucursal": "Quilmes - 109",
+            "cuenta_corriente": "109 - 1645-8",
+            "moneda": "Pesos"
+        }
+    },
+    "estadisticas": {
+        "total_obras": 2536,
+        "años_experiencia": 30,
+        "metros_agua_aprox": 85000,
+        "metros_cloaca_aprox": 75000,
+        "metros_gas_aprox": 75000,
+        "zonas_trabajo": ["Berazategui", "Quilmes", "Hudson", "Tortugas", "Villa Elisa", "CABA", "Villa 31", "Canning", "Moreno", "Ituzaingó", "Martínez", "Claypole", "Magdalena", "Luján"]
+    }
+};
+
+// Inicialización
+document.addEventListener('DOMContentLoaded', function () {
+    initializeApp();
+    setupScrollAnimations();
+    setupMobileMenu();
+    setupHeaderScroll();
+    setupParallax();
+});
+
+function initializeApp() {
+    renderStats();
+    renderEmpresa();
+    renderServicios();
+    renderEquipamiento();
+    renderObras();
+    renderEmprendimientos();
+    renderFooter();
+    setupFilters();
+
+    // Actualizar año actual
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+}
+
+// Renderizar estadísticas con animación de contador
+function renderStats() {
+    const stats = [
+        { icon: 'engineering', value: sapecoData.estadisticas.años_experiencia, suffix: '+', label: 'Años de Experiencia' },
+        { icon: 'construction', value: sapecoData.estadisticas.total_obras, suffix: '+', label: 'Proyectos Completados' },
+        { icon: 'verified', value: 100, suffix: '%', label: 'Calidad Garantizada' }
+    ];
+
+    const container = document.getElementById('stats-container');
+    container.innerHTML = stats.map((stat, index) => `
+        <div class="stat-item ${index > 1 ? 'bordered' : ''}">
+            <span class="material-symbols-outlined stat-icon">${stat.icon}</span>
+            <p class="stat-value">
+                <span class="counter" data-target="${stat.value}">${stat.value}</span>${stat.suffix}
+            </p>
+            <p class="stat-label">${stat.label}</p>
+        </div>
+    `).join('');
+}
+
+// Renderizar información de empresa
+function renderEmpresa() {
+    document.getElementById('empresa-nombre').textContent = sapecoData.empresa.nombre;
+    document.getElementById('empresa-descripcion').textContent = sapecoData.empresa.descripcion;
+    document.getElementById('año-fundacion').textContent = sapecoData.empresa.fundacion;
+    document.getElementById('años-experiencia-text').textContent = `Más de ${sapecoData.estadisticas.años_experiencia} años de experiencia`;
+
+    // Renderizar servicios destacados
+    const serviciosContainer = document.getElementById('empresa-servicios');
+    const serviciosDestacados = [
+        { icon: 'engineering', title: 'Ingeniería de Precisión', desc: 'Equipos técnicos altamente capacitados para desafíos complejos.' },
+        { icon: 'safety_check', title: 'Seguridad Certificada', desc: 'Estándares internacionales de seguridad en cada maniobra.' }
+    ];
+
+    serviciosContainer.innerHTML = serviciosDestacados.map(s => `
+        <div class="servicio-destacado">
+            <div class="servicio-icon">
+                <span class="material-symbols-outlined">${s.icon}</span>
+            </div>
+            <div class="servicio-text">
+                <h4>${s.title}</h4>
+                <p>${s.desc}</p>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Renderizar servicios
+function renderServicios() {
+    const serviciosData = [
+        { icon: 'water_drop', title: 'Redes de Agua', desc: 'Instalación de redes de agua potable con cañería de polietileno unido por electrofusión.', items: ['Polietileno clase 10', 'Electrofusión'] },
+        { icon: 'delete', title: 'Redes Cloacales', desc: 'Ejecución de redes de cloacas con cañería de PVC junta segura y bocas de registro.', items: ['PVC junta segura', 'Bocas premoldeadas'] },
+        { icon: 'local_fire_department', title: 'Redes de Gas', desc: 'Gasoductos y redes de gas natural con provisión de materiales y accesorios.', items: ['Gas natural', 'Plantas reguladoras'] },
+        { icon: 'bolt', title: 'Redes Eléctricas', desc: 'Tendido eléctrico de media y baja tensión con cables y empalmes certificados.', items: ['Media tensión', 'Baja tensión'] },
+        { icon: 'water', title: 'Redes Pluviales', desc: 'Desagües pluviales con cañería de PVC y bocas de registro premoldeadas.', items: ['Desagües', 'Bocas de registro'] },
+        { icon: 'construction', title: 'Movimiento de Suelo', desc: 'Apertura de calles, entoscado, hormigón de base y cunetas.', items: ['Calles', 'Hormigón'] }
+    ];
+
+    const container = document.getElementById('servicios-container');
+    container.innerHTML = serviciosData.map((s, i) => `
+        <div class="card observe-animation" data-animation="animate-fade-in-up" style="animation-delay: ${i * 0.1}s">
+            <div class="card-icon">
+                <span class="material-symbols-outlined" style="font-size: 1.875rem;">${s.icon}</span>
+            </div>
+            <h3 class="card-title">${s.title}</h3>
+            <p class="card-description">${s.desc}</p>
+            <ul class="card-list">
+                ${s.items.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+        </div>
+    `).join('');
+}
+
+// Renderizar equipamiento
+function renderEquipamiento() {
+    const equipos = sapecoData.equipamiento.equipo_zanjeo.filter(e => e.imagen);
+    const container = document.getElementById('equipamiento-container');
+
+    container.innerHTML = equipos.map((equipo, i) => `
+        <div class="equipo-item observe-animation" data-animation="animate-scale-in" style="animation-delay: ${i * 0.1}s">
+            <img src="${equipo.imagen}" alt="${equipo.nombre}"/>
+            <div class="equipo-overlay">
+                <span class="equipo-name">${equipo.nombre}</span>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Renderizar obras
+function renderObras(filter = 'all') {
+    let obras = sapecoData.obras_realizadas;
+
+    if (filter !== 'all') {
+        obras = obras.filter(o => o.ubicacion.toLowerCase().includes(filter.toLowerCase()));
+    }
+
+    const obrasToShow = obras.slice(0, displayedObras);
+    const container = document.getElementById('obras-container');
+
+    container.innerHTML = obrasToShow.map((obra, i) => `
+        <div class="obra-card observe-animation"
+             data-animation="animate-fade-in-up"
+             style="animation-delay: ${i * 0.1}s"
+             onclick="openObraModal('${obra.id}')">
+            <div class="obra-image-container">
+                <img class="obra-image" src="${obra.imagen_principal}" alt="${obra.nombre}"/>
+            </div>
+            <div class="obra-overlay">
+                ${obra.en_curso ? '<span class="obra-badge">En Curso</span>' : ''}
+                <span class="obra-location">${obra.ubicacion}</span>
+                <h3 class="obra-title">${obra.nombre}</h3>
+                <p class="obra-period">${obra.periodo}</p>
+                <p class="obra-description">
+                    ${obra.trabajos.map(t => t.tipo).slice(0, 2).join(' • ')}
+                </p>
+            </div>
+        </div>
+    `).join('');
+
+    // Actualizar contador
+    document.getElementById('obras-count').textContent = `${obras.length} proyectos`;
+
+    // Mostrar/ocultar botón de cargar más
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    if (displayedObras >= obras.length) {
+        loadMoreBtn.style.display = 'none';
+    } else {
+        loadMoreBtn.style.display = 'inline-block';
+    }
+
+    // Re-observar elementos
+    observeElements();
+}
+
+// Renderizar emprendimientos
+function renderEmprendimientos() {
+    const container = document.getElementById('emprendimientos-container');
+    container.innerHTML = sapecoData.emprendimientos_zona_sur.map((emp, i) => `
+        <div class="emprendimiento-item observe-animation"
+             data-animation="animate-fade-in-up"
+             style="animation-delay: ${i * 0.05}s">
+            <div class="emprendimiento-content">
+                <div class="emprendimiento-icon">
+                    <span class="material-symbols-outlined">location_city</span>
+                </div>
+                <span class="emprendimiento-name">${emp.nombre}</span>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Renderizar footer
+function renderFooter() {
+    document.getElementById('footer-nombre').textContent = sapecoData.empresa.nombre;
+    document.getElementById('copyright-nombre').textContent = sapecoData.empresa.nombre;
+
+    // Servicios en footer
+    const footerServicios = document.getElementById('footer-servicios');
+    footerServicios.innerHTML = sapecoData.empresa.servicios.slice(0, 5).map(s => `
+        <li><a href="#servicios">${s}</a></li>
+    `).join('');
+
+    // Contacto en footer
+    const footerContacto = document.getElementById('footer-contacto');
+    footerContacto.innerHTML = `
+        <li>
+            <span class="material-symbols-outlined">location_on</span>
+            <span>${sapecoData.contacto.direccion}</span>
+        </li>
+        <li>
+            <span class="material-symbols-outlined">mail</span>
+            <a href="mailto:${sapecoData.contacto.email}">${sapecoData.contacto.email}</a>
+        </li>
+        <li>
+            <span class="material-symbols-outlined">call</span>
+            <a href="tel:${sapecoData.contacto.telefono_celular}">${sapecoData.contacto.telefono_celular}</a>
+        </li>
+        <li>
+            <span class="material-symbols-outlined">phone</span>
+            <span>${sapecoData.contacto.telefono_oficina} (Oficina)</span>
+        </li>
+    `;
+
+    // Referencias bancarias
+    const footerBancarias = document.getElementById('footer-bancarias');
+    footerBancarias.innerHTML = `
+        <p><strong>Banco:</strong> ${sapecoData.referencias.bancarias.banco}</p>
+        <p><strong>Sucursal:</strong> ${sapecoData.referencias.bancarias.sucursal}</p>
+        <p><strong>Cuenta:</strong> ${sapecoData.referencias.bancarias.cuenta_corriente}</p>
+    `;
+}
+
+// Configurar filtros
+function setupFilters() {
+    const ubicaciones = [...new Set(sapecoData.obras_realizadas.map(o => o.ubicacion))];
+    const container = document.getElementById('filtros-container');
+
+    ubicaciones.slice(0, 5).forEach(ub => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn';
+        btn.dataset.filter = ub;
+        btn.textContent = ub;
+        btn.onclick = () => applyFilter(ub);
+        container.appendChild(btn);
+    });
+}
+
+function applyFilter(filter) {
+    currentFilter = filter;
+    displayedObras = 6;
+
+    // Actualizar estado activo de botones
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.filter === filter);
+    });
+
+    renderObras(filter);
+}
+
+// Cargar más obras
+document.addEventListener('DOMContentLoaded', function() {
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function () {
+            displayedObras += 6;
+            renderObras(currentFilter);
+        });
+    }
+});
+
+// Modal de obra
+function openObraModal(obraId) {
+    const obra = sapecoData.obras_realizadas.find(o => o.id === obraId);
+    if (!obra) return;
+
+    const modalContent = document.getElementById('modal-content');
+    modalContent.innerHTML = `
+        <div class="modal-image">
+            <img src="${obra.imagen_principal}" alt="${obra.nombre}"/>
+            <div class="modal-image-gradient"></div>
+        </div>
+        <div class="modal-body">
+            <div class="modal-meta">
+                ${obra.en_curso ? '<span class="obra-badge">En Curso</span>' : ''}
+                <span class="obra-location">${obra.ubicacion}</span>
+                <span class="obra-period">${obra.periodo}</span>
+            </div>
+            <h2 class="modal-title">${obra.nombre}</h2>
+
+            <h3 class="modal-section-title">Trabajos Realizados</h3>
+            <div class="trabajos-list">
+                ${obra.trabajos.map(t => `
+                    <div class="trabajo-item">
+                        <div class="trabajo-header">
+                            <h4 class="trabajo-tipo">${t.tipo}</h4>
+                            ${t.cantidad ? `<span class="trabajo-cantidad">${t.cantidad}</span>` : ''}
+                        </div>
+                        <ul class="trabajo-detalles">
+                            ${t.detalle.map(d => `<li>${d}</li>`).join('')}
+                        </ul>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+
+    document.getElementById('obra-modal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    document.getElementById('obra-modal').classList.add('hidden');
+    document.body.style.overflow = '';
+}
+
+// Cerrar modal con Escape
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeModal();
+});
+
+// Animaciones al scroll
+function setupScrollAnimations() {
+    observeElements();
+}
+
+function observeElements() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const animation = entry.target.dataset.animation;
+                entry.target.classList.add('animated', animation);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.observe-animation:not(.animated)').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// Mobile menu
+function setupMobileMenu() {
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('show');
+        });
+
+        // Cerrar al hacer click en un enlace
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('show');
+            });
+        });
+    }
+}
+
+// Header scroll effect
+function setupHeaderScroll() {
+    const header = document.getElementById('header');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > 100) {
+            header.classList.add('shadow-lg');
+        } else {
+            header.classList.remove('shadow-lg');
+        }
+
+        lastScroll = currentScroll;
+    });
+}
+
+// Parallax effect
+function setupParallax() {
+    const heroBg = document.getElementById('hero-bg');
+
+    if (heroBg) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            if (scrolled < window.innerHeight) {
+                heroBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    }
+}
+
+// Scroll to section
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}

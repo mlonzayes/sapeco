@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sapeco S.A. - Obras Públicas y Montajes Industriales</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <div class="logo-svg">
+                    <svg fill="currentColor" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.291 20L0 20.103 20.188 0l.103.103L40 20.103 20.291 20z"></path>
+                        <path d="M20.188 20.207L0 40V20.31h.103L20.188 20.207z" fill="#050840"></path>
+                    </svg>
+                </div>
+                <h2 class="empresa-nombre" id="empresa-nombre">Sapeco S.A.</h2>
+            </div>
+            <nav class="desktop-nav">
+                <a href="#servicios">Servicios</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <button class="btn-primary desktop-only" onclick="scrollToSection('contacto')">
+                Solicitar Cotización
+            </button>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <nav>
+                <a href="#servicios">Servicios</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+                <button class="btn-primary" onclick="scrollToSection('contacto')" style="width: 100%; margin-top: 0.5rem;">
+                    Solicitar Cotización
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background" style="background-image: url('https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg');"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <span class="hero-badge animate-fade-in">
+                Excelencia en Obras Públicas
+            </span>
+            <h1 class="hero-title animate-fade-in-up">
+                INGENIERÍA SÓLIDA<br />
+                <span class="gradient-text">PARA EL FUTURO</span>
+            </h1>
+            <p class="hero-description animate-fade-in-up delay-200" id="hero-description">
+                Más de 30 años construyendo infraestructura crítica. Soluciones integrales en montajes industriales y
+                obras civiles con capacidad operativa de primer nivel.
+            </p>
+            <div class="hero-buttons animate-fade-in-up delay-300">
+                <button class="btn-primary large" onclick="scrollToSection('proyectos')">
+                    Ver Proyectos
+                </button>
+                <button class="btn-secondary" onclick="scrollToSection('nosotros')">
+                    Conocer Más
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container observe-animation" data-animation="animate-slide-in-bottom">
+            <div class="stats-grid" id="stats-container">
+                <!-- Stats se llenarán dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiénes Somos -->
+    <section id="nosotros">
+        <div class="section-container">
+            <div class="grid-2">
+                <div class="observe-animation" data-animation="animate-fade-in-left">
+                    <h2 class="section-title">Quiénes Somos</h2>
+                    <h3 class="section-heading">Construyendo confianza con cada estructura</h3>
+                    <p class="section-description" id="empresa-descripcion">
+                        <!-- Se llenará dinámicamente -->
+                    </p>
+                    <div class="servicios-destacados" id="empresa-servicios" style="margin-top: 1.5rem;">
+                        <!-- Se llenará dinámicamente -->
+                    </div>
+                </div>
+                <div class="observe-animation" data-animation="animate-fade-in-right">
+                    <div class="image-container">
+                        <div class="image-gradient"></div>
+                        <img class="main-image"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHgjJOs5iel75-ANsDLOl9eZ4IsprLqrAIHEOW3tb2seU9L6hSe5DchBjHDArTLKE-oLQzF8anFxmf5SMYuDlrCstXB-V239u_Wd61lCiaPRQoC2YqYxe87yDZi5UR4NOiggMyouiymgQuPfN03dr3HYbckqeZpbusW8lkz9i1L7vl6b6zZOfQKbZ4Sx9m0BIqPh7z8_HExPq44wnVX5Ur0sMCs0fOeBSEM-qiPVT_dI4IK425zbMqDwgOYXuMVn-i_0zDdVVjh0vq"
+                            alt="Equipo de trabajo" />
+                        <div class="image-badge">
+                            <div class="badge-icon">
+                                <span class="material-symbols-outlined" style="font-size: 2.5rem;">award_star</span>
+                            </div>
+                            <div class="badge-text">
+                                <strong>Fundada en <span id="año-fundacion">1994</span></strong>
+                                <small id="años-experiencia-text">Más de 30 años de experiencia</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="white-bg border-y" id="servicios">
+        <div class="section-container">
+            <div class="observe-animation" data-animation="animate-fade-in-up" style="margin-bottom: 3rem;">
+                <h2 class="section-heading">Soluciones Integrales</h2>
+                <p class="section-description">Un abanico completo de servicios para grandes obras públicas y
+                    privadas, garantizando eficiencia en cada etapa.</p>
+            </div>
+            <div class="grid-3" id="servicios-container">
+                <!-- Servicios se llenarán dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipamiento -->
+    <section>
+        <div class="section-container">
+            <div class="observe-animation" data-animation="animate-fade-in-up" style="text-align: center; margin-bottom: 3rem;">
+                <h2 class="section-heading">Capacidad Operativa</h2>
+                <p class="section-description" style="max-width: 42rem; margin: 0 auto;">Contamos con un parque de maquinaria moderno y propio que nos
+                    permite autonomía y rapidez de respuesta.</p>
+            </div>
+            <div class="equipamiento-grid" id="equipamiento-container">
+                <!-- Equipamiento se llenará dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos / Obras -->
+    <section class="white-bg border-y" id="proyectos">
+        <div class="section-container">
+            <div class="observe-animation" data-animation="animate-fade-in-up" style="display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem; gap: 1rem;">
+                <h2 class="section-heading">Obras Realizadas</h2>
+                <span class="section-description" id="obras-count">27 proyectos completados</span>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filters-container observe-animation" data-animation="animate-fade-in-up" id="filtros-container">
+                <button class="filter-btn active" data-filter="all">
+                    Todas
+                </button>
+                <!-- Más filtros se agregarán dinámicamente -->
+            </div>
+
+            <div class="grid-3" id="obras-container" style="gap: 2rem;">
+                <!-- Obras se llenarán dinámicamente -->
+            </div>
+
+            <!-- Botón cargar más -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn-secondary" id="load-more-btn">
+                    Cargar más proyectos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emprendimientos Zona Sur -->
+    <section>
+        <div class="section-container">
+            <div class="observe-animation" data-animation="animate-fade-in-up" style="margin-bottom: 3rem;">
+                <h2 class="section-title">Zona Sur</h2>
+                <h3 class="section-heading">Emprendimientos Destacados</h3>
+                <p class="section-description">Participamos en los proyectos y construcción de los principales
+                    emprendimientos de zona sur.</p>
+            </div>
+            <div class="emprendimientos-grid" id="emprendimientos-container">
+                <!-- Emprendimientos se llenarán dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container observe-animation" data-animation="animate-scale-in">
+            <div class="cta-background"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAcHZvpUzFkJ2i_G4G00sfpsj__tcs0wfHOjHUw9SVkEcmQTLpip3SCXoB2QLuqx0P1CpHcp-wtXTh8WnDWK3Em-fYSzF2WCYgDy7jilD3a4cY2L89qxyw9-soXMgf5DTqnraVGzfoFrTOwWa3yh5r1ZVecfNebHO9hb-vaO8FmDZxR1N89es20pIc4U-4mFKS37ymlfh6k09pCkRa8bIXr3qR2hgkOr6QxgtiOGVg0aLB-9DvLY0aOv0ZDRSyOxUB1ReDg9HTGGsEO');">
+            </div>
+            <div class="cta-overlay"></div>
+            <div class="cta-dark-overlay"></div>
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2 class="cta-title">¿Listo para comenzar su proyecto?</h2>
+                    <p class="cta-description">Nuestro equipo de ingenieros está listo para brindarle la mejor
+                        solución técnica y económica.</p>
+                </div>
+                <button class="cta-button" onclick="scrollToSection('contacto')">
+                    Contáctenos Hoy
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contacto -->
+    <footer id="contacto">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <div class="logo-svg">
+                            <svg fill="currentColor" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.291 20L0 20.103 20.188 0l.103.103L40 20.103 20.291 20z"></path>
+                                <path d="M20.188 20.207L0 40V20.31h.103L20.188 20.207z" fill="#050840"></path>
+                            </svg>
+                        </div>
+                        <span id="footer-nombre">Sapeco S.A.</span>
+                    </div>
+                    <p class="footer-description" id="footer-descripcion">
+                        Ingeniería sólida para un futuro industrial. Comprometidos con la calidad, la
+                        seguridad y el medio ambiente.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Servicios</h4>
+                    <ul class="footer-list" id="footer-servicios">
+                        <!-- Se llenará dinámicamente -->
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contacto</h4>
+                    <ul class="footer-contact" id="footer-contacto">
+                        <!-- Se llenará dinámicamente -->
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Referencias Bancarias</h4>
+                    <div class="footer-description" id="footer-bancarias">
+                        <!-- Se llenará dinámicamente -->
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© <span id="current-year">2024</span> <span
+                        id="copyright-nombre">Sapeco S.A.</span> Todos los derechos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal para detalle de obra -->
+    <div class="modal hidden" id="obra-modal">
+        <div class="modal-backdrop" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div id="modal-content">
+                <!-- Contenido del modal se llenará dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
