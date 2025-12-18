@@ -635,44 +635,58 @@ function setupMobileMenu() {
 
     if (menuBtn && mobileMenu) {
         menuBtn.addEventListener('click', () => {
+            // Forzar estilos para ocupar toda la pantalla (sobrepasa cualquier contenedor)
+            mobileMenu.style.cssText = `
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                width: 100vw !important;
+                height: 100vh !important;
+                max-width: none !important;
+                max-height: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                border-radius: 0 !important;
+                z-index: 99999 !important;
+            `;
+
             mobileMenu.classList.add('show');
             document.body.classList.add('menu-open');
             document.documentElement.classList.add('menu-open');
             document.body.style.overflow = 'hidden';
             document.documentElement.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+            document.body.style.height = '100%';
         });
+
+        // Función para cerrar el menú
+        const closeMenu = () => {
+            mobileMenu.classList.remove('show');
+            document.body.classList.remove('menu-open');
+            document.documentElement.classList.remove('menu-open');
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
+            document.body.style.height = '';
+        };
 
         // Cerrar con botón X
         if (menuCloseBtn) {
-            menuCloseBtn.addEventListener('click', () => {
-                mobileMenu.classList.remove('show');
-                document.body.classList.remove('menu-open');
-                document.documentElement.classList.remove('menu-open');
-                document.body.style.overflow = '';
-                document.documentElement.style.overflow = '';
-            });
+            menuCloseBtn.addEventListener('click', closeMenu);
         }
 
         // Cerrar al hacer click en un enlace
         mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('show');
-                document.body.classList.remove('menu-open');
-                document.documentElement.classList.remove('menu-open');
-                document.body.style.overflow = '';
-                document.documentElement.style.overflow = '';
-            });
+            link.addEventListener('click', closeMenu);
         });
 
         // Cerrar al hacer click en el botón del menú
         mobileMenu.querySelectorAll('.btn-primary').forEach(btn => {
-            btn.addEventListener('click', () => {
-                mobileMenu.classList.remove('show');
-                document.body.classList.remove('menu-open');
-                document.documentElement.classList.remove('menu-open');
-                document.body.style.overflow = '';
-                document.documentElement.style.overflow = '';
-            });
+            btn.addEventListener('click', closeMenu);
         });
     }
 }

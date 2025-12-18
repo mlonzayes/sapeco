@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" name="viewport" />
+    <title>404 - Página No Encontrada | Sapeco S.A.</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/icono.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/icono.ico" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    <style>
+        :root {
+            --primary: #050840;
+            --secondary: #75AABF;
+            --accent: #99E9F2;
+            --background: #F2F2F2;
+            --surface: #FFFFFF;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --border-radius: 1rem;
+            --border-radius-full: 9999px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--background);
+            color: var(--primary);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Fondo decorativo */
+        .background-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            z-index: 0;
+            background-image:
+                linear-gradient(45deg, var(--primary) 25%, transparent 25%),
+                linear-gradient(-45deg, var(--primary) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, var(--primary) 75%),
+                linear-gradient(-45deg, transparent 75%, var(--primary) 75%);
+            background-size: 40px 40px;
+            background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 42rem;
+            text-align: center;
+            background-color: white;
+            padding: 3rem 2rem;
+            border-radius: 2rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .logo-img {
+            height: 2.5rem;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: var(--font-display);
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 900;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: var(--font-display);
+            margin-bottom: 1rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        .error-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-family: var(--font-display);
+        }
+
+        .error-description {
+            font-size: 1.125rem;
+            color: rgba(5, 8, 64, 0.7);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .icon-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background-color: rgba(153, 233, 242, 0.1);
+            border-radius: var(--border-radius-full);
+            font-size: 0.875rem;
+            color: var(--primary);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .icon-item:hover {
+            background-color: rgba(153, 233, 242, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .icon-item .material-symbols-outlined {
+            color: var(--accent);
+            font-size: 1.25rem;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            height: 3rem;
+            padding: 0 2rem;
+            border-radius: var(--border-radius-full);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: var(--font-body);
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary);
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid rgba(5, 8, 64, 0.2);
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            background-color: rgba(5, 8, 64, 0.05);
+        }
+
+        .footer-text {
+            margin-top: 2rem;
+            font-size: 0.875rem;
+            color: rgba(5, 8, 64, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+
+            .error-code {
+                font-size: 5rem;
+            }
+
+            .error-title {
+                font-size: 1.5rem;
+            }
+
+            .error-description {
+                font-size: 1rem;
+            }
+
+            .buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .logo-text {
+                font-size: 1.25rem;
+            }
+
+            .icon-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-pattern"></div>
+
+    <div class="container">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Sapeco S.A." class="logo-img">
+            <span class="logo-text">Sapeco S.A.</span>
+        </div>
+
+        <div class="error-code">404</div>
+
+        <h1 class="error-title">Página No Encontrada</h1>
+
+        <p class="error-description">
+            Lo sentimos, la página que buscas no existe o ha sido movida.
+            Pero no te preocupes, podemos ayudarte a encontrar lo que necesitas.
+        </p>
+
+        <div class="icon-container">
+            <div class="icon-item">
+                <span class="material-symbols-outlined">engineering</span>
+                <span>30+ Años</span>
+            </div>
+            <div class="icon-item">
+                <span class="material-symbols-outlined">construction</span>
+                <span>2536+ Proyectos</span>
+            </div>
+            <div class="icon-item">
+                <span class="material-symbols-outlined">verified</span>
+                <span>100% Calidad</span>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <a href="/" class="btn btn-primary">
+                <span class="material-symbols-outlined">home</span>
+                Volver al Inicio
+            </a>
+            <a href="/#contacto" class="btn btn-secondary">
+                <span class="material-symbols-outlined">mail</span>
+                Contáctanos
+            </a>
+        </div>
+
+        <p class="footer-text">
+            ¿Necesitas ayuda? Llámanos al <strong>+54 11 52284318</strong>
+        </p>
+    </div>
+
+    <script>
+        // Contador de redirección automática (opcional)
+        let countdown = 10;
+        const redirectTimer = null; // Desactivado por defecto
+
+        // Si quieres activar la redirección automática, descomenta:
+        /*
+        const redirectTimer = setInterval(() => {
+            countdown--;
+            if (countdown <= 0) {
+                clearInterval(redirectTimer);
+                window.location.href = '/';
+            }
+        }, 1000);
+        */
+
+        // Analytics - registrar error 404 (si tienes Google Analytics)
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_not_found', {
+                'page_location': window.location.href,
+                'page_path': window.location.pathname
+            });
+        }
+    </script>
+</body>
+
+</html>

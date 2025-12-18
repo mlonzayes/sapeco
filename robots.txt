@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.sapecosa.com.ar/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Disallow
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/

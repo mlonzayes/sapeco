@@ -63,16 +63,21 @@ body {
 
 body.menu-open {
     overflow: hidden !important;
-    height: 100vh;
-    height: 100dvh;
-    position: fixed;
-    width: 100%;
+    height: 100vh !important;
+    height: 100dvh !important;
+    position: fixed !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
 }
 
 html.menu-open {
     overflow: hidden !important;
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    max-width: 100vw !important;
+    height: 100% !important;
 }
 
 /* ======================
@@ -99,6 +104,7 @@ header {
     transition: all 0.4s ease;
     opacity: 0;
     box-sizing: border-box;
+    overflow: visible;
 }
 
 header.visible {
@@ -194,22 +200,24 @@ nav a:hover {
 }
 
 .mobile-menu {
-    position: fixed;
+    position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
     bottom: 0 !important;
     width: 100vw !important;
+    width: 100% !important;
+    max-width: none !important;
     height: 100vh !important;
     height: 100dvh !important;
-    min-height: 100vh;
-    min-height: 100dvh;
-    min-height: -webkit-fill-available;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    min-height: -webkit-fill-available !important;
     margin: 0 !important;
-    padding: 0;
+    padding: 0 !important;
     background-color: rgba(5, 8, 64, 0.98);
     backdrop-filter: blur(20px);
-    z-index: 9999;
+    z-index: 99999 !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -220,8 +228,9 @@ nav a:hover {
     overflow: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    box-sizing: border-box;
-    transform: translateZ(0);
+    box-sizing: border-box !important;
+    transform: translateZ(0) !important;
+    border-radius: 0 !important;
 }
 
 .mobile-menu.show {
@@ -825,12 +834,18 @@ section {
    ====================== */
 .image-container {
     position: relative;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 3rem;
+}
+
+.image-wrapper {
+    position: relative;
     border-radius: var(--border-radius-xl);
     overflow: hidden;
     aspect-ratio: 4 / 3;
     width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
 }
 
 .image-gradient {
@@ -843,7 +858,7 @@ section {
     transition: opacity 0.5s ease;
 }
 
-.image-container:hover .image-gradient {
+.image-wrapper:hover .image-gradient {
     opacity: 0.4;
 }
 
@@ -858,23 +873,25 @@ section {
     max-width: none;
 }
 
-.image-container:hover .main-image {
+.image-wrapper:hover .main-image {
     transform: scale(1.05);
 }
 
 .image-badge {
     position: absolute;
-    bottom: 1.5rem;
+    bottom: -1.5rem;
     left: 1.5rem;
     right: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(5, 8, 64, 0.1);
-    padding: 1rem;
+    padding: 1.25rem 1.5rem;
     border-radius: var(--border-radius);
     display: flex;
     align-items: center;
     gap: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 10;
 }
 
 .badge-icon {
@@ -1556,6 +1573,29 @@ footer {
 }
 
 /* ======================
+   Fixes para móviles
+   ====================== */
+
+/* Fix para evitar espacios en blanco en el menú móvil */
+@supports (-webkit-touch-callout: none) {
+    /* iOS specific fix */
+    .mobile-menu {
+        min-height: -webkit-fill-available !important;
+    }
+
+    body.menu-open {
+        height: -webkit-fill-available !important;
+    }
+}
+
+/* Fix adicional para todos los navegadores móviles */
+@media (max-width: 1024px) {
+    .mobile-menu {
+        inset: 0 !important;
+    }
+}
+
+/* ======================
    Responsive
    ====================== */
 
@@ -1637,9 +1677,24 @@ footer {
 
     /* Menú móvil en tablets */
     .mobile-menu {
-        width: 100%;
-        height: 100vh;
-        height: 100dvh;
+        position: fixed !important;
+        width: 100vw !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        max-width: 100% !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        min-height: 100vh !important;
+        min-height: 100dvh !important;
+        min-height: -webkit-fill-available !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        inset: 0 !important;
     }
 
     .mobile-menu nav a {
@@ -1761,10 +1816,24 @@ footer {
 
     /* Menú móvil */
     .mobile-menu {
-        width: 100%;
-        height: 100vh;
-        height: 100dvh;
-        min-height: -webkit-fill-available;
+        position: fixed !important;
+        width: 100vw !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        max-width: 100% !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        min-height: 100vh !important;
+        min-height: 100dvh !important;
+        min-height: -webkit-fill-available !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        inset: 0 !important;
     }
 
     .mobile-menu nav {
@@ -1869,5 +1938,24 @@ footer {
 
     .footer-grid {
         gap: 2rem;
+    }
+
+    /* Ajuste del badge en móviles */
+    .image-container {
+        margin-bottom: 2.5rem;
+    }
+
+    .image-badge {
+        bottom: -1rem;
+        left: 1rem;
+        right: 1rem;
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+
+    .badge-icon {
+        font-size: 2rem !important;
     }
 }
