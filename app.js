@@ -1,5 +1,5 @@
 // Variables globales
-let displayedObras = 6;
+let displayedObras = 8;
 let currentFilter = 'all';
 
 // Datos embebidos
@@ -41,17 +41,24 @@ const sapecoData = {
         "telefono_celular": "+54 11 52284318",
         "email": "sapecosa@gmail.com"
     },
-    "emprendimientos_zona_sur": [
-        { "id": "las-golondrinas", "nombre": "Las Golondrinas", "imagen_principal": "", "imagenes": [] },
-        { "id": "dorrego-reserva-urbana", "nombre": "Dorrego Reserva Urbana", "imagen_principal": "", "imagenes": [] },
-        { "id": "nuevo-quilmes", "nombre": "Nuevo Quilmes", "imagen_principal": "", "imagenes": [] },
-        { "id": "los-troncos", "nombre": "Los Troncos", "imagen_principal": "", "imagenes": [] },
-        { "id": "hudson-park", "nombre": "Hudson Park", "imagen_principal": "", "imagenes": [] },
-        { "id": "barrancas-de-iraola", "nombre": "Barrancas de Iraola", "imagen_principal": "", "imagenes": [] },
-        { "id": "barrancas-de-guido", "nombre": "Barrancas de Guido", "imagen_principal": "", "imagenes": [] },
-        { "id": "greenville", "nombre": "Greenville", "imagen_principal": "", "imagenes": [] },
-        { "id": "lagoon-hudson", "nombre": "Lagoon Hudson", "imagen_principal": "", "imagenes": [] },
-        { "id": "puerto-nizuc", "nombre": "Puerto Nizuc", "imagen_principal": "", "imagenes": [] }
+    "clientes": [
+        { "nombre": "AySA", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/AySA_logo.svg/2560px-AySA_logo.svg.png" },
+        { "nombre": "Metrogas", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Metrogas_Argentina_logo.svg/1200px-Metrogas_Argentina_logo.svg.png" },
+        { "nombre": "Municipalidad de Berazategui", "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Escudo_del_Partido_de_Berazategui.png" },
+        { "nombre": "Eidico", "logo": "https://pbs.twimg.com/profile_images/1131922765366472705/1qf9n2lX_400x400.png" },
+        { "nombre": "Grupo Monarca", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6sJz_w2kH0E6M-x4guG3u4qjC0a2e_-xXFg&s" },
+        { "nombre": "YPF", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/YPF_logo_2012.svg/1200px-YPF_logo_2012.svg.png" },
+        { "nombre": "Las Golondrinas", "logo": "" },
+        { "nombre": "Dorrego Reserva Urbana", "logo": "" },
+        { "nombre": "Nuevo Quilmes", "logo": "" },
+        { "nombre": "Los Troncos", "logo": "" },
+        { "nombre": "Hudson Park", "logo": "" },
+        { "nombre": "Edesur", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Edesur_Logo.svg/1200px-Edesur_Logo.svg.png" },
+        { "nombre": "Barrancas de Iraola", "logo": "" },
+        { "nombre": "Barrancas de Guido", "logo": "" },
+        { "nombre": "Greenville", "logo": "" },
+        { "nombre": "Lagoon Hudson", "logo": "" },
+        { "nombre": "Puerto Nizuc", "logo": "" }
     ],
     "obras_realizadas": [
         {
@@ -265,10 +272,14 @@ const sapecoData = {
     ],
     "equipamiento": {
         "equipo_zanjeo": [
-            { "nombre": "Mini-cargadora John Deere MD: 8875 c/ zanjadora", "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuB-XvKxe53m2KCrcki0pCBR27UU4Tb7mWBbWUnAwd9zlleLSpLQI-tKXbIcpU9ok4XGaVHBlqoJWYYk6GpGvXkz9MTvLGWEQrJM4NIjSDzVvU7Z9H6tg3Y07My9WSupDBnvbHDFaPTMVe5F00bfS59teLb_bydrDrjRRySAX04x74xQq2Jx_FVVzN8_wGu3pRgF5CP6w0Dwbi6B8CQYhVcxud7zlCVC8hf6qopbBaiOW8zpa0C0M966XdOvFOX4iXo_RGoLvxmbc5Yi" },
+            { "nombre": "Mini-cargadora John Deere MD: 8875", "imagen": "images/miniexcavadora.jpeg" },
             { "nombre": "Retro pala John Deere MD 310 J", "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuAHmcqO50EHb0ogPv9yhIt53GI00rps_Afsd4SKo3N6N6VF-P-XAmQpH-GHOxLOXDAKznx-ExriGCmKPPaf1Tp6fNj_Pn2FQA5e0RLN-d_k051qscIbiNuw1FO7TxSizyeWJdl4X9s1Jbfluq6NtY3_7ImkhJ-lwBpA_5SVsFpvbl3ywHa5pfeocQ4GSTppzGaMiZmGy4kXktjjqwhmM6DEpda4wnWGYhzvNmcJI2EyKoWZyAofc2RmSx3ScV6OiR4M5sCvTb8FOy60" },
+            { "nombre": "Retro excavadora John Deere", "imagen": "images/excavadora.jpeg" },
+            { "nombre": "Mini-cargadora John Deere MD: 8875 c/ zanjadora", "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuB-XvKxe53m2KCrcki0pCBR27UU4Tb7mWBbWUnAwd9zlleLSpLQI-tKXbIcpU9ok4XGaVHBlqoJWYYk6GpGvXkz9MTvLGWEQrJM4NIjSDzVvU7Z9H6tg3Y07My9WSupDBnvbHDFaPTMVe5F00bfS59teLb_bydrDrjRRySAX04x74xQq2Jx_FVVzN8_wGu3pRgF5CP6w0Dwbi6B8CQYhVcxud7zlCVC8hf6qopbBaiOW8zpa0C0M966XdOvFOX4iXo_RGoLvxmbc5Yi" },
+            { "nombre": "Camión de Obra", "imagen": "images/camion.jpeg" },
             { "nombre": "Retro excavadora John Deere MD 120 D", "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuDc5mxW-wi2QFLeP3EbV3yKTbRlnJtWG9f70OlFGS-PZMbpy0yaAiV96CUIqQBZ7eX-jd2Z6jHSxaik0jkHzl_f1i68X5AGC4wOi7KW5BwFR1Q4W38P1qFI6SVTNjYv7_sBnjAjXHGHg7cZAwuklMtsNMD30VRf1icjAfF_rzsNFKgcoHwcTq2L-LXdEgRQI8ow5_y6AK_-fQ05vu6JbpY1JC8tZfaLQqV9dos0pdwFOGMrt3Q20nPBj5o2iUxodcZAg_iYahZJXiS2" },
-            { "nombre": "Motocompresor Cetec", "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuCEP9tKfRC25Urb4Zlnu53GMjvQxBszLZUFF4cpf6W7NH5M_l6mEMRua3HjHU0D4R_uHysxh4rlbAuGu2Rrx_6BXgJWx8cGpoViM3EYyDcSkimmt854K187pjeGM3uy_iSqRkVR43uPmr2KBXky21NP_ocfQ0cZZ50Wxx6Y7aNxOYKuATSoVWbDADc1k-UvPJqC10JBnKtW9JfiAbFv2aUro0xuKqP4xFhUOl5dJNtmTfngJ7QEkZnDEfXv5luBYE5cAt59FjU0P5JA" }
+            { "nombre": "Motocompresor Cetec", "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuCEP9tKfRC25Urb4Zlnu53GMjvQxBszLZUFF4cpf6W7NH5M_l6mEMRua3HjHU0D4R_uHysxh4rlbAuGu2Rrx_6BXgJWx8cGpoViM3EYyDcSkimmt854K187pjeGM3uy_iSqRkVR43uPmr2KBXky21NP_ocfQ0cZZ50Wxx6Y7aNxOYKuATSoVWbDADc1k-UvPJqC10JBnKtW9JfiAbFv2aUro0xuKqP4xFhUOl5dJNtmTfngJ7QEkZnDEfXv5luBYE5cAt59FjU0P5JA" },
+            { "nombre": "Rollo de Obra", "imagen": "images/rollo.jpeg" },
         ],
         "equipo_pruebas": [
             { "nombre": "Tanque aguatero de 3000 litros", "imagen": "" },
@@ -300,7 +311,27 @@ const sapecoData = {
         "metros_cloaca_aprox": 75000,
         "metros_gas_aprox": 75000,
         "zonas_trabajo": ["Berazategui", "Quilmes", "Hudson", "Tortugas", "Villa Elisa", "CABA", "Villa 31", "Canning", "Moreno", "Ituzaingó", "Martínez", "Claypole", "Magdalena", "Luján"]
-    }
+    },
+    "clientes": [
+        { "nombre": "AySA", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/AySA_logo.svg/2560px-AySA_logo.svg.png" },
+        { "nombre": "Metrogas", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Metrogas_Argentina_logo.svg/1200px-Metrogas_Argentina_logo.svg.png" },
+        { "nombre": "Edesur", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Edesur_Logo.svg/1200px-Edesur_Logo.svg.png" },
+        { "nombre": "Municipalidad de Berazategui", "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Escudo_del_Partido_de_Berazategui.png" },
+        { "nombre": "Eidico", "logo": "https://pbs.twimg.com/profile_images/1131922765366472705/1qf9n2lX_400x400.png" },
+        { "nombre": "Grupo Monarca", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6sJz_w2kH0E6M-x4guG3u4qjC0a2e_-xXFg&s" },
+        { "nombre": "YPF", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/YPF_logo_2012.svg/1200px-YPF_logo_2012.svg.png" },
+        { "nombre": "Telecom", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Telecom_Argentina_logo.svg/2560px-Telecom_Argentina_logo.svg.png" },
+        { "nombre": "Las Golondrinas", "logo": "" },
+        { "nombre": "Dorrego Reserva Urbana", "logo": "" },
+        { "nombre": "Nuevo Quilmes", "logo": "" },
+        { "nombre": "Los Troncos", "logo": "" },
+        { "nombre": "Hudson Park", "logo": "" },
+        { "nombre": "Barrancas de Iraola", "logo": "" },
+        { "nombre": "Barrancas de Guido", "logo": "" },
+        { "nombre": "Greenville", "logo": "" },
+        { "nombre": "Lagoon Hudson", "logo": "" },
+        { "nombre": "Puerto Nizuc", "logo": "" }
+    ]
 };
 
 // Inicialización
@@ -318,7 +349,7 @@ function initializeApp() {
     renderServicios();
     renderEquipamiento();
     renderObras();
-    renderEmprendimientos();
+    renderClientes();
     renderFooter();
     setupFilters();
 
@@ -406,10 +437,7 @@ function renderEquipamiento() {
 
     container.innerHTML = equipos.map((equipo, i) => `
         <div class="equipo-item observe-animation" data-animation="animate-scale-in" style="animation-delay: ${i * 0.1}s">
-            <img src="${equipo.imagen}" alt="${equipo.nombre}"/>
-            <div class="equipo-overlay">
-                <span class="equipo-name">${equipo.nombre}</span>
-            </div>
+            <img src="${equipo.imagen}" alt="${equipo.nombre}" title="${equipo.nombre}"/>
         </div>
     `).join('');
 }
@@ -460,21 +488,31 @@ function renderObras(filter = 'all') {
     observeElements();
 }
 
-// Renderizar emprendimientos
-function renderEmprendimientos() {
-    const container = document.getElementById('emprendimientos-container');
-    container.innerHTML = sapecoData.emprendimientos_zona_sur.map((emp, i) => `
-        <div class="emprendimiento-item observe-animation"
-             data-animation="animate-fade-in-up"
-             style="animation-delay: ${i * 0.05}s">
-            <div class="emprendimiento-content">
-                <div class="emprendimiento-icon">
-                    <span class="material-symbols-outlined">location_city</span>
+// Renderizar clientes (Carousel infinito)
+function renderClientes() {
+    const section = document.getElementById('clientes-carousel');
+    if (!section) return;
+
+    const clientes = sapecoData.clientes;
+    // Duplicamos los clientes para asegurar el loop suave
+    // Necesitamos suficientes elementos para cubrir el ancho de pantalla + un poco más
+    const tripleClientes = [...clientes, ...clientes, ...clientes];
+
+    section.innerHTML = `
+        <div class="carousel-track">
+            ${tripleClientes.map((cliente, i) => `
+                <div class="cliente-slide">
+                    <div class="cliente-logo-container">
+                         ${cliente.logo ?
+            `<img src="${cliente.logo}" alt="${cliente.nombre}" class="cliente-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                             <span class="cliente-nombre" style="display:none">${cliente.nombre}</span>`
+            : `<span class="cliente-nombre">${cliente.nombre}</span>`
+        }
+                    </div>
                 </div>
-                <span class="emprendimiento-name">${emp.nombre}</span>
-            </div>
+            `).join('')}
         </div>
-    `).join('');
+    `;
 }
 
 // Renderizar footer
@@ -523,6 +561,12 @@ function setupFilters() {
     const ubicaciones = [...new Set(sapecoData.obras_realizadas.map(o => o.ubicacion))];
     const container = document.getElementById('filtros-container');
 
+    // Filter "All" button listener
+    const allBtn = document.getElementById('filtros-container').querySelector('[data-filter="all"]');
+    if (allBtn) {
+        allBtn.onclick = () => applyFilter('all');
+    }
+
     ubicaciones.slice(0, 5).forEach(ub => {
         const btn = document.createElement('button');
         btn.className = 'filter-btn';
@@ -535,7 +579,7 @@ function setupFilters() {
 
 function applyFilter(filter) {
     currentFilter = filter;
-    displayedObras = 6;
+    displayedObras = 8;
 
     // Actualizar estado activo de botones
     document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -546,11 +590,11 @@ function applyFilter(filter) {
 }
 
 // Cargar más obras
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const loadMoreBtn = document.getElementById('load-more-btn');
     if (loadMoreBtn) {
         loadMoreBtn.addEventListener('click', function () {
-            displayedObras += 6;
+            displayedObras += 4;
             renderObras(currentFilter);
         });
     }
@@ -564,7 +608,7 @@ function openObraModal(obraId) {
     const modalContent = document.getElementById('modal-content');
     modalContent.innerHTML = `
         <div class="modal-image">
-            <img src="${obra.imagen_principal}" alt="${obra.nombre}"/>
+            <img src="${obra.imagen_principal}" alt="${obra.nombre}" style="image-rendering: auto;"/>
             <div class="modal-image-gradient"></div>
         </div>
         <div class="modal-body">
