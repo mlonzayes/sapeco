@@ -359,13 +359,15 @@ function initializeApp() {
 
 // Renderizar estadísticas con animación de contador
 function renderStats() {
+    const container = document.getElementById('stats-container');
+    if (!container) return;
+
     const stats = [
         { icon: 'engineering', value: sapecoData.estadisticas.años_experiencia, suffix: '+', label: 'Años de Experiencia' },
         { icon: 'construction', value: sapecoData.estadisticas.total_obras, suffix: '+', label: 'Proyectos Completados' },
         { icon: 'verified', value: 100, suffix: '%', label: 'Calidad Garantizada' }
     ];
 
-    const container = document.getElementById('stats-container');
     container.innerHTML = stats.map((stat, index) => `
         <div class="stat-item ${index > 1 ? 'bordered' : ''}">
             <span class="material-symbols-outlined stat-icon">${stat.icon}</span>
@@ -379,33 +381,45 @@ function renderStats() {
 
 // Renderizar información de empresa
 function renderEmpresa() {
-    document.getElementById('empresa-nombre').textContent = sapecoData.empresa.nombre;
-    document.getElementById('empresa-descripcion').textContent = sapecoData.empresa.descripcion;
-    document.getElementById('año-fundacion').textContent = sapecoData.empresa.fundacion;
-    document.getElementById('años-experiencia-text').textContent = `Más de ${sapecoData.estadisticas.años_experiencia} años de experiencia`;
+    const nombreEl = document.getElementById('empresa-nombre');
+    if (nombreEl) nombreEl.textContent = sapecoData.empresa.nombre;
+
+    const descEl = document.getElementById('empresa-descripcion');
+    if (descEl) descEl.textContent = sapecoData.empresa.descripcion;
+
+    const fundacionEl = document.getElementById('año-fundacion');
+    if (fundacionEl) fundacionEl.textContent = sapecoData.empresa.fundacion;
+
+    const expTextEl = document.getElementById('años-experiencia-text');
+    if (expTextEl) expTextEl.textContent = `Más de ${sapecoData.estadisticas.años_experiencia} años de experiencia`;
 
     // Renderizar servicios destacados
     const serviciosContainer = document.getElementById('empresa-servicios');
-    const serviciosDestacados = [
-        { icon: 'engineering', title: 'Ingeniería de Precisión', desc: 'Equipos técnicos altamente capacitados para desafíos complejos.' },
-        { icon: 'safety_check', title: 'Seguridad Certificada', desc: 'Estándares internacionales de seguridad en cada maniobra.' }
-    ];
+    if (serviciosContainer) {
+        const serviciosDestacados = [
+            { icon: 'engineering', title: 'Ingeniería de Precisión', desc: 'Equipos técnicos altamente capacitados para desafíos complejos.' },
+            { icon: 'safety_check', title: 'Seguridad Certificada', desc: 'Estándares internacionales de seguridad en cada maniobra.' }
+        ];
 
-    serviciosContainer.innerHTML = serviciosDestacados.map(s => `
-        <div class="servicio-destacado">
-            <div class="servicio-icon">
-                <span class="material-symbols-outlined">${s.icon}</span>
+        serviciosContainer.innerHTML = serviciosDestacados.map(s => `
+            <div class="servicio-destacado">
+                <div class="servicio-icon">
+                    <span class="material-symbols-outlined">${s.icon}</span>
+                </div>
+                <div class="servicio-text">
+                    <h4>${s.title}</h4>
+                    <p>${s.desc}</p>
+                </div>
             </div>
-            <div class="servicio-text">
-                <h4>${s.title}</h4>
-                <p>${s.desc}</p>
-            </div>
-        </div>
-    `).join('');
+        `).join('');
+    }
 }
 
 // Renderizar servicios
 function renderServicios() {
+    const container = document.getElementById('servicios-container');
+    if (!container) return;
+
     const serviciosData = [
         { icon: 'water_drop', title: 'Redes de Agua Potable', desc: 'Instalación de redes de agua potable con cañería de polietileno unido por electrofusión.', items: ['Polietileno clase 10', 'Electrofusión'] },
         { icon: 'delete', title: 'Redes Cloacales', desc: 'Ejecución de redes de cloacas con cañería de PVC junta segura y bocas de registro.', items: ['PVC junta segura', 'Bocas premoldeadas'] },
@@ -415,7 +429,6 @@ function renderServicios() {
         { icon: 'construction', title: 'Movimiento de Suelo', desc: 'Apertura de calles, entoscado, hormigón de base y cunetas.', items: ['Calles', 'Hormigón'] }
     ];
 
-    const container = document.getElementById('servicios-container');
     container.innerHTML = serviciosData.map((s, i) => `
         <div class="card observe-animation" data-animation="animate-fade-in-up" style="animation-delay: ${i * 0.1}s">
             <div class="card-icon">
@@ -432,8 +445,10 @@ function renderServicios() {
 
 // Renderizar equipamiento
 function renderEquipamiento() {
-    const equipos = sapecoData.equipamiento.equipo_zanjeo.filter(e => e.imagen);
     const container = document.getElementById('equipamiento-container');
+    if (!container) return;
+
+    const equipos = sapecoData.equipamiento.equipo_zanjeo.filter(e => e.imagen);
 
     container.innerHTML = equipos.map((equipo, i) => `
         <div class="equipo-item observe-animation" data-animation="animate-scale-in" style="animation-delay: ${i * 0.1}s">
@@ -444,6 +459,9 @@ function renderEquipamiento() {
 
 // Renderizar obras
 function renderObras(filter = 'all') {
+    const container = document.getElementById('obras-container');
+    if (!container) return;
+
     let obras = sapecoData.obras_realizadas;
 
     if (filter !== 'all') {
@@ -451,7 +469,6 @@ function renderObras(filter = 'all') {
     }
 
     const obrasToShow = obras.slice(0, displayedObras);
-    const container = document.getElementById('obras-container');
 
     container.innerHTML = obrasToShow.map((obra, i) => `
         <div class="obra-card observe-animation"
@@ -474,14 +491,17 @@ function renderObras(filter = 'all') {
     `).join('');
 
     // Actualizar contador
-    document.getElementById('obras-count').textContent = `${obras.length} proyectos`;
+    const countEl = document.getElementById('obras-count');
+    if (countEl) countEl.textContent = `${obras.length} proyectos`;
 
     // Mostrar/ocultar botón de cargar más
     const loadMoreBtn = document.getElementById('load-more-btn');
-    if (displayedObras >= obras.length) {
-        loadMoreBtn.style.display = 'none';
-    } else {
-        loadMoreBtn.style.display = 'inline-block';
+    if (loadMoreBtn) {
+        if (displayedObras >= obras.length) {
+            loadMoreBtn.style.display = 'none';
+        } else {
+            loadMoreBtn.style.display = 'inline-block';
+        }
     }
 
     // Re-observar elementos
@@ -517,52 +537,63 @@ function renderClientes() {
 
 // Renderizar footer
 function renderFooter() {
-    document.getElementById('footer-nombre').textContent = sapecoData.empresa.nombre;
-    document.getElementById('copyright-nombre').textContent = sapecoData.empresa.nombre;
+    const nombreEl = document.getElementById('footer-nombre');
+    if (nombreEl) nombreEl.textContent = sapecoData.empresa.nombre;
+
+    const copyEl = document.getElementById('copyright-nombre');
+    if (copyEl) copyEl.textContent = sapecoData.empresa.nombre;
 
     // Servicios en footer
     const footerServicios = document.getElementById('footer-servicios');
-    footerServicios.innerHTML = sapecoData.empresa.servicios.slice(0, 5).map(s => `
-        <li><a href="#servicios">${s}</a></li>
-    `).join('');
+    if (footerServicios) {
+        footerServicios.innerHTML = sapecoData.empresa.servicios.slice(0, 5).map(s => `
+            <li><a href="index.html#servicios">${s}</a></li>
+        `).join(''); // Fixed link to point to index.html
+    }
 
     // Contacto en footer
     const footerContacto = document.getElementById('footer-contacto');
-    footerContacto.innerHTML = `
-        <li>
-            <span class="material-symbols-outlined">location_on</span>
-            <span>${sapecoData.contacto.direccion}</span>
-        </li>
-        <li>
-            <span class="material-symbols-outlined">mail</span>
-            <a href="mailto:${sapecoData.contacto.email}">${sapecoData.contacto.email}</a>
-        </li>
-        <li>
-            <span class="material-symbols-outlined">call</span>
-            <a href="tel:${sapecoData.contacto.telefono_celular}">${sapecoData.contacto.telefono_celular}</a>
-        </li>
-        <li>
-            <span class="material-symbols-outlined">phone</span>
-            <span>${sapecoData.contacto.telefono_oficina} (Oficina)</span>
-        </li>
-    `;
+    if (footerContacto) {
+        footerContacto.innerHTML = `
+            <li>
+                <span class="material-symbols-outlined">location_on</span>
+                <span>${sapecoData.contacto.direccion}</span>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">mail</span>
+                <a href="mailto:${sapecoData.contacto.email}">${sapecoData.contacto.email}</a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">call</span>
+                <a href="tel:${sapecoData.contacto.telefono_celular}">${sapecoData.contacto.telefono_celular}</a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">phone</span>
+                <span>${sapecoData.contacto.telefono_oficina} (Oficina)</span>
+            </li>
+        `;
+    }
 
     // Referencias bancarias
     const footerBancarias = document.getElementById('footer-bancarias');
-    footerBancarias.innerHTML = `
-        <p><strong>Banco:</strong> ${sapecoData.referencias.bancarias.banco}</p>
-        <p><strong>Sucursal:</strong> ${sapecoData.referencias.bancarias.sucursal}</p>
-        <p><strong>Cuenta:</strong> ${sapecoData.referencias.bancarias.cuenta_corriente}</p>
-    `;
+    if (footerBancarias) {
+        footerBancarias.innerHTML = `
+            <p><strong>Banco:</strong> ${sapecoData.referencias.bancarias.banco}</p>
+            <p><strong>Sucursal:</strong> ${sapecoData.referencias.bancarias.sucursal}</p>
+            <p><strong>Cuenta:</strong> ${sapecoData.referencias.bancarias.cuenta_corriente}</p>
+        `;
+    }
 }
 
 // Configurar filtros
 function setupFilters() {
-    const ubicaciones = [...new Set(sapecoData.obras_realizadas.map(o => o.ubicacion))];
     const container = document.getElementById('filtros-container');
+    if (!container) return; // Exit if filters container doesn't exist
+
+    const ubicaciones = [...new Set(sapecoData.obras_realizadas.map(o => o.ubicacion))];
 
     // Filter "All" button listener
-    const allBtn = document.getElementById('filtros-container').querySelector('[data-filter="all"]');
+    const allBtn = container.querySelector('[data-filter="all"]');
     if (allBtn) {
         allBtn.onclick = () => applyFilter('all');
     }
