@@ -8,7 +8,7 @@ const sapecoData = {
         "nombre": "Sapeco S.A.",
         "slogan": "Obras Publicas - Montajes Industriales",
         "fundacion": 1994,
-        "descripcion": "Empresa creada con el fin de canalizar las inquietudes de sus socios fundadores, con la aspiración de desarrollar obras de infraestructura que tengan como fin último un servicio a la comunidad mediante el mejoramiento de su calidad de vida.",
+        "descripcion": "Somos una empresa familiar dedicada a las redes de infraestructuras",
         "experiencia": "Obras públicas y privadas, siendo estas últimas fundamentalmente su ámbito natural de trabajo.",
         "logo": "",
         "servicios": [
@@ -272,14 +272,10 @@ const sapecoData = {
     ],
     "equipamiento": {
         "equipo_zanjeo": [
-            { "nombre": "Mini-cargadora John Deere MD: 8875", "imagen": "images/miniexcavadora.jpeg" },
-            { "nombre": "Retro pala John Deere MD 310 J", "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuAHmcqO50EHb0ogPv9yhIt53GI00rps_Afsd4SKo3N6N6VF-P-XAmQpH-GHOxLOXDAKznx-ExriGCmKPPaf1Tp6fNj_Pn2FQA5e0RLN-d_k051qscIbiNuw1FO7TxSizyeWJdl4X9s1Jbfluq6NtY3_7ImkhJ-lwBpA_5SVsFpvbl3ywHa5pfeocQ4GSTppzGaMiZmGy4kXktjjqwhmM6DEpda4wnWGYhzvNmcJI2EyKoWZyAofc2RmSx3ScV6OiR4M5sCvTb8FOy60" },
-            { "nombre": "Retro excavadora John Deere", "imagen": "images/excavadora.jpeg" },
-            { "nombre": "Mini-cargadora John Deere MD: 8875 c/ zanjadora", "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuB-XvKxe53m2KCrcki0pCBR27UU4Tb7mWBbWUnAwd9zlleLSpLQI-tKXbIcpU9ok4XGaVHBlqoJWYYk6GpGvXkz9MTvLGWEQrJM4NIjSDzVvU7Z9H6tg3Y07My9WSupDBnvbHDFaPTMVe5F00bfS59teLb_bydrDrjRRySAX04x74xQq2Jx_FVVzN8_wGu3pRgF5CP6w0Dwbi6B8CQYhVcxud7zlCVC8hf6qopbBaiOW8zpa0C0M966XdOvFOX4iXo_RGoLvxmbc5Yi" },
+            { "nombre": "Excavadora John Deere", "imagen": "images/excavadora.jpeg" },
+            { "nombre": "Mini Cargadora", "imagen": "images/miniexcavadora.jpeg" },
             { "nombre": "Camión de Obra", "imagen": "images/camion.jpeg" },
-            { "nombre": "Retro excavadora John Deere MD 120 D", "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuDc5mxW-wi2QFLeP3EbV3yKTbRlnJtWG9f70OlFGS-PZMbpy0yaAiV96CUIqQBZ7eX-jd2Z6jHSxaik0jkHzl_f1i68X5AGC4wOi7KW5BwFR1Q4W38P1qFI6SVTNjYv7_sBnjAjXHGHg7cZAwuklMtsNMD30VRf1icjAfF_rzsNFKgcoHwcTq2L-LXdEgRQI8ow5_y6AK_-fQ05vu6JbpY1JC8tZfaLQqV9dos0pdwFOGMrt3Q20nPBj5o2iUxodcZAg_iYahZJXiS2" },
-            { "nombre": "Motocompresor Cetec", "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuCEP9tKfRC25Urb4Zlnu53GMjvQxBszLZUFF4cpf6W7NH5M_l6mEMRua3HjHU0D4R_uHysxh4rlbAuGu2Rrx_6BXgJWx8cGpoViM3EYyDcSkimmt854K187pjeGM3uy_iSqRkVR43uPmr2KBXky21NP_ocfQ0cZZ50Wxx6Y7aNxOYKuATSoVWbDADc1k-UvPJqC10JBnKtW9JfiAbFv2aUro0xuKqP4xFhUOl5dJNtmTfngJ7QEkZnDEfXv5luBYE5cAt59FjU0P5JA" },
-            { "nombre": "Rollo de Obra", "imagen": "images/rollo.jpeg" },
+            { "nombre": "Equipamiento en Obra", "imagen": "images/rollo.jpeg" }
         ],
         "equipo_pruebas": [
             { "nombre": "Tanque aguatero de 3000 litros", "imagen": "" },
@@ -313,24 +309,24 @@ const sapecoData = {
         "zonas_trabajo": ["Berazategui", "Quilmes", "Hudson", "Tortugas", "Villa Elisa", "CABA", "Villa 31", "Canning", "Moreno", "Ituzaingó", "Martínez", "Claypole", "Magdalena", "Luján"]
     },
     "clientes": [
-        { "nombre": "AySA", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/AySA_logo.svg/2560px-AySA_logo.svg.png" },
-        { "nombre": "Metrogas", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Metrogas_Argentina_logo.svg/1200px-Metrogas_Argentina_logo.svg.png" },
-        { "nombre": "Edesur", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Edesur_Logo.svg/1200px-Edesur_Logo.svg.png" },
-        { "nombre": "Municipalidad de Berazategui", "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Escudo_del_Partido_de_Berazategui.png" },
-        { "nombre": "Eidico", "logo": "https://pbs.twimg.com/profile_images/1131922765366472705/1qf9n2lX_400x400.png" },
-        { "nombre": "Grupo Monarca", "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6sJz_w2kH0E6M-x4guG3u4qjC0a2e_-xXFg&s" },
-        { "nombre": "YPF", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/YPF_logo_2012.svg/1200px-YPF_logo_2012.svg.png" },
-        { "nombre": "Telecom", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Telecom_Argentina_logo.svg/2560px-Telecom_Argentina_logo.svg.png" },
-        { "nombre": "Las Golondrinas", "logo": "" },
-        { "nombre": "Dorrego Reserva Urbana", "logo": "" },
-        { "nombre": "Nuevo Quilmes", "logo": "" },
-        { "nombre": "Los Troncos", "logo": "" },
-        { "nombre": "Hudson Park", "logo": "" },
-        { "nombre": "Barrancas de Iraola", "logo": "" },
-        { "nombre": "Barrancas de Guido", "logo": "" },
-        { "nombre": "Greenville", "logo": "" },
-        { "nombre": "Lagoon Hudson", "logo": "" },
-        { "nombre": "Puerto Nizuc", "logo": "" }
+        { "nombre": "AySA", "logo": "images/aysa.jpg" },
+        { "nombre": "Metrogas", "logo": "images/metrogas.png" },
+        { "nombre": "Edesur", "logo": "images/edesur.png" },
+        { "nombre": "Edenor", "logo": "images/edenor.webp" },
+        { "nombre": "Edelap", "logo": "images/edelap.png" },
+        { "nombre": "Naturgy", "logo": "images/naturgy.jpg" },
+        { "nombre": "YPF", "logo": "images/ypf.jpg" },
+        { "nombre": "Telecom", "logo": "images/telecom.png" },
+        { "nombre": "Municipalidad de Berazategui", "logo": "images/berazategui.png" },
+        { "nombre": "Las Golondrinas", "logo": "images/las_golondrinas.png" },
+        { "nombre": "Los Troncos", "logo": "images/los_troncos.png" },
+        { "nombre": "Hudson Park", "logo": "images/hudson_pak.png" },
+        { "nombre": "Parque Innovacion", "logo": "images/parque_innovacion.png" },
+        // { "nombre": "Puerto Nizuc", "logo": "images/puerto_nizuc.jpg" },
+        // { "nombre": "Azurra Tortugas", "logo": "images/azurra_tortugas.jpg" },
+        { "nombre": "Nuevo Quilmes", "logo": "images/nuevo_quilmes.jpg" },
+        { "nombre": "Greenville", "logo": "images/greenville.png" },
+        { "nombre": "Fincas Don Victor", "logo": "images/fincas_don_victor.png" }
     ]
 };
 
@@ -397,8 +393,28 @@ function renderEmpresa() {
     const serviciosContainer = document.getElementById('empresa-servicios');
     if (serviciosContainer) {
         const serviciosDestacados = [
-            { icon: 'engineering', title: 'Ingeniería de Precisión', desc: 'Equipos técnicos altamente capacitados para desafíos complejos.' },
-            { icon: 'safety_check', title: 'Seguridad Certificada', desc: 'Estándares internacionales de seguridad en cada maniobra.' }
+            {
+                icon: 'engineering',
+                title: 'ING DE PRESICION',
+                desc: 'Nuestro equipo se especializa en la ejecucion de proyectos de infraestructura, tanto tecnicamente en la ejecucion de proyectos desde 0, resolviendo las inquietudes o problematicas de nuestros clientes y la ejecuicion de los mismos'
+            },
+            {
+                icon: 'safety_check',
+                title: 'SEGURIDAD CERTIFICADA',
+                desc: 'Contamos con mas de 30 años en el rubro, con obras en actual funcionamiento que respaldan nuestro desempeño'
+            },
+            {
+                icon: 'verified', // Icon definition
+                title: 'PROYECTOS Y APROBACIONES',
+                desc: 'Tenemos la capacidad de realizar proyectos y aprobarlos en los distintos entes tales como:',
+                logos: [
+                    'images/edesur.png',
+                    'images/edenor.webp',
+                    'images/edelap.png',
+                    'images/aysa.jpg',
+                    'images/naturgy.jpg'
+                ]
+            }
         ];
 
         serviciosContainer.innerHTML = serviciosDestacados.map(s => `
@@ -409,6 +425,11 @@ function renderEmpresa() {
                 <div class="servicio-text">
                     <h4>${s.title}</h4>
                     <p>${s.desc}</p>
+                    ${s.logos ? `
+                        <div class="servicio-logos">
+                            ${s.logos.map(logo => `<img class="logo-ente" src="${logo}" alt="Ente regulador">`).join('')}
+                        </div>
+                    ` : ''}
                 </div>
             </div>
         `).join('');
@@ -421,11 +442,11 @@ function renderServicios() {
     if (!container) return;
 
     const serviciosData = [
-        { icon: 'water_drop', title: 'Redes de Agua Potable', desc: 'Instalación de redes de agua potable con cañería de polietileno unido por electrofusión.', items: ['Polietileno clase 10', 'Electrofusión'] },
-        { icon: 'delete', title: 'Redes Cloacales', desc: 'Ejecución de redes de cloacas con cañería de PVC junta segura y bocas de registro.', items: ['PVC junta segura', 'Bocas premoldeadas'] },
+        { icon: 'water_drop', title: 'Redes de Agua Potable', desc: 'Instalación de redes de agua potable con cañería de polietileno unido por electrofusión y fusión a tope.', items: ['Polietileno clase 10', 'Electrofusión', 'Fusión a tope'] },
+        { icon: 'delete', title: 'Redes Cloacales', desc: 'Ejecución de redes de cloacas con cañería de PVC junta segura. Especialistas en pozos de bombeo.', items: ['PVC junta segura', 'Pozos de bombeo'] },
         { icon: 'local_fire_department', title: 'Redes de Gas', desc: 'Gasoductos y redes de gas natural con provisión de materiales y accesorios.', items: ['Gas natural', 'Plantas reguladoras'] },
-        { icon: 'bolt', title: 'Redes Eléctricas', desc: 'Tendido eléctrico de media y baja tensión con cables y empalmes certificados.', items: ['Media tensión', 'Baja tensión'] },
-        { icon: 'water', title: 'Redes Pluviales', desc: 'Desagües pluviales con cañería de PVC y bocas de registro premoldeadas.', items: ['Desagües', 'Bocas de registro'] },
+        { icon: 'bolt', title: 'Redes Eléctricas', desc: 'Tendido eléctrico de media y baja tensión aprobados por los entes reguladores.', items: ['Media y Baja Tensión', 'Aprobado por Entes'] },
+        { icon: 'water', title: 'Redes Pluviales', desc: 'Desagües pluviales con cañerías de PVC o premoldeadas según proyecto.', items: ['Cañerías PVC', 'Premoldeados'] },
         { icon: 'construction', title: 'Movimiento de Suelo', desc: 'Apertura de calles, entoscado, hormigón de base y cunetas.', items: ['Calles', 'Hormigón'] }
     ];
 
@@ -513,7 +534,9 @@ function renderClientes() {
     const section = document.getElementById('clientes-carousel');
     if (!section) return;
 
-    const clientes = sapecoData.clientes;
+    // Filtrar solo clientes con logo
+    const clientes = sapecoData.clientes.filter(c => c.logo);
+
     // Duplicamos los clientes para asegurar el loop suave
     // Necesitamos suficientes elementos para cubrir el ancho de pantalla + un poco más
     const tripleClientes = [...clientes, ...clientes, ...clientes];
@@ -523,11 +546,7 @@ function renderClientes() {
             ${tripleClientes.map((cliente, i) => `
                 <div class="cliente-slide">
                     <div class="cliente-logo-container">
-                         ${cliente.logo ?
-            `<img src="${cliente.logo}" alt="${cliente.nombre}" class="cliente-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-                             <span class="cliente-nombre" style="display:none">${cliente.nombre}</span>`
-            : `<span class="cliente-nombre">${cliente.nombre}</span>`
-        }
+                         <img src="${cliente.logo}" alt="${cliente.nombre}" class="cliente-logo">
                     </div>
                 </div>
             `).join('')}

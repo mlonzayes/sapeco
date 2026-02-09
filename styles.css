@@ -414,7 +414,7 @@ nav a:hover {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 1;
     pointer-events: none;
 }
@@ -1630,6 +1630,27 @@ footer {
 .servicio-text p {
     font-size: 0.875rem;
     color: rgba(5, 8, 64, 0.5);
+    line-height: 1.4;
+}
+
+.servicio-logos {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-ente {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 6px;
+    transition: transform 0.2s ease;
+}
+
+.logo-ente:hover {
+    transform: scale(1.1);
 }
 
 /* ======================
@@ -2145,6 +2166,36 @@ footer {
         right: 1rem;
         padding: 0.75rem 1rem;
     }
+
+    /* Servicios Destacados en Móvil */
+    .servicios-destacados {
+        gap: 1.5rem;
+    }
+
+    .servicio-destacado {
+        gap: 0.75rem;
+    }
+
+    .servicio-text h4 {
+        font-size: 1rem;
+    }
+
+    .servicio-text p {
+        font-size: 0.8125rem;
+        margin-bottom: 0.5rem;
+        word-break: break-word;
+        hyphens: auto;
+    }
+
+    .servicio-logos {
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .logo-ente {
+        height: 24px;
+        border-radius: 4px;
+    }
 }
 
 /* Adaptación de Cards de Proyectos para Móvil */
@@ -2216,8 +2267,8 @@ footer {
     width: 100%;
     overflow: hidden;
     padding: 1rem 0;
-    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 .carousel-track {
@@ -2242,26 +2293,32 @@ footer {
 }
 
 .cliente-logo-container {
-    height: 60px;
+    height: 140px;
+    width: 250px;
+    /* Ancho fijo mayor */
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.4;
-    transition: all 0.3s ease;
-    filter: grayscale(100%);
+    opacity: 1;
+    transition: none;
+    filter: none;
+    padding: 0;
+    background-color: transparent;
+    overflow: visible;
 }
 
 .cliente-logo-container:hover {
     opacity: 1;
-    filter: grayscale(0%);
-    transform: scale(1.1);
+    filter: none;
+    transform: none;
 }
 
 .cliente-logo {
-    max-height: 100%;
-    width: auto;
+    height: 100%;
+    width: 100%;
     object-fit: contain;
-    max-width: 180px;
+    object-position: center;
+    border-radius: 12px;
 }
 
 .cliente-nombre {
@@ -2290,11 +2347,12 @@ footer {
     }
 
     .cliente-logo-container {
-        height: 40px;
+        height: 80px;
+        width: 150px;
     }
 
     .cliente-logo {
-        max-width: 120px;
+        max-width: none;
     }
 }
 
