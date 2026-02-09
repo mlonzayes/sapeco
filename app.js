@@ -268,6 +268,22 @@ const sapecoData = {
                 { "tipo": "Red de Cloacas", "cantidad": "11.000,00 mts", "detalle": ["Zanjeo", "Provisión de Materiales", "Bocas de Registro PREMOLDEADAS", "Tapas Reglamentarias hierro fundido"] },
                 { "tipo": "Red de Agua", "cantidad": "11.000,00 mts", "detalle": ["Zanjeo", "Provisión de Materiales", "P.V.C. clase 10 junta segura", "Válvulas", "Servicios", "Medidores"] }
             ]
+        },
+        {
+            "id": "nuevo-quilmes-2",
+            "nombre": "Nuevo Quilmes 2",
+            "slug": "nuevo-quilmes-2",
+            "ubicacion": "Quilmes",
+            "periodo": "2025-Actualidad",
+            "año_inicio": 2025,
+            "año_fin": null,
+            "en_curso": true,
+            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuAHmcqO50EHb0ogPv9yhIt53GI00rps_Afsd4SKo3N6N6VF-P-XAmQpH-GHOxLOXDAKznx-ExriGCmKPPaf1Tp6fNj_Pn2FQA5e0RLN-d_k051qscIbiNuw1FO7TxSizyeWJdl4X9s1Jbfluq6NtY3_7ImkhJ-lwBpA_5SVsFpvbl3ywHa5pfeocQ4GSTppzGaMiZmGy4kXktjjqwhmM6DEpda4wnWGYhzvNmcJI2EyKoWZyAofc2RmSx3ScV6OiR4M5sCvTb8FOy60",
+            "imagenes": [],
+            "trabajos": [
+                { "tipo": "Agua Potable", "cantidad": null, "detalle": [] },
+                { "tipo": "Red de Cloaca", "cantidad": null, "detalle": [] }
+            ]
         }
     ],
     "equipamiento": {
@@ -322,8 +338,8 @@ const sapecoData = {
         { "nombre": "Los Troncos", "logo": "images/los_troncos.png" },
         { "nombre": "Hudson Park", "logo": "images/hudson_pak.png" },
         { "nombre": "Parque Innovacion", "logo": "images/parque_innovacion.png" },
-        // { "nombre": "Puerto Nizuc", "logo": "images/puerto_nizuc.jpg" },
-        // { "nombre": "Azurra Tortugas", "logo": "images/azurra_tortugas.jpg" },
+        { "nombre": "Puerto Nizuc", "logo": "images/puerto_nizuc.jpg" },
+        { "nombre": "Azurra Tortugas", "logo": "images/azurra_tortugas.jpg" },
         { "nombre": "Nuevo Quilmes", "logo": "images/nuevo_quilmes.jpg" },
         { "nombre": "Greenville", "logo": "images/greenville.png" },
         { "nombre": "Fincas Don Victor", "logo": "images/fincas_don_victor.png" }
@@ -404,7 +420,7 @@ function renderEmpresa() {
                 desc: 'Contamos con mas de 30 años en el rubro, con obras en actual funcionamiento que respaldan nuestro desempeño'
             },
             {
-                icon: 'verified', // Icon definition
+                icon: 'verified',
                 title: 'PROYECTOS Y APROBACIONES',
                 desc: 'Tenemos la capacidad de realizar proyectos y aprobarlos en los distintos entes tales como:',
                 logos: [
@@ -412,6 +428,7 @@ function renderEmpresa() {
                     'images/edenor.webp',
                     'images/edelap.png',
                     'images/aysa.jpg',
+                    'images/metrogas.png',
                     'images/naturgy.jpg'
                 ]
             }
@@ -446,7 +463,7 @@ function renderServicios() {
         { icon: 'delete', title: 'Redes Cloacales', desc: 'Ejecución de redes de cloacas con cañería de PVC junta segura. Especialistas en pozos de bombeo.', items: ['PVC junta segura', 'Pozos de bombeo'] },
         { icon: 'local_fire_department', title: 'Redes de Gas', desc: 'Gasoductos y redes de gas natural con provisión de materiales y accesorios.', items: ['Gas natural', 'Plantas reguladoras'] },
         { icon: 'bolt', title: 'Redes Eléctricas', desc: 'Tendido eléctrico de media y baja tensión aprobados por los entes reguladores.', items: ['Media y Baja Tensión', 'Aprobado por Entes'] },
-        { icon: 'water', title: 'Redes Pluviales', desc: 'Desagües pluviales con cañerías de PVC o premoldeadas según proyecto.', items: ['Cañerías PVC', 'Premoldeados'] },
+        { icon: 'water', title: 'Redes Pluviales', desc: 'Desagües pluviales con cañerías de PVC o premoldeadas segun proyecto.', items: ['Cañerías PVC', 'Premoldeados'] },
         { icon: 'construction', title: 'Movimiento de Suelo', desc: 'Apertura de calles, entoscado, hormigón de base y cunetas.', items: ['Calles', 'Hormigón'] }
     ];
 
