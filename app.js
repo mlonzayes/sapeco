@@ -70,7 +70,7 @@ const sapecoData = {
             "año_inicio": 2024,
             "año_fin": null,
             "en_curso": true,
-            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuAZ5r5ioa8IAs3pJQ5VEasNhaBzMvaYxDaug5Viww1JdqbMImdtJEwR2b5YrX7zLHtnkSlZjecYK816Ip9676xySQF1i8EFiA8f12CQxH0f-9ATRlisUnGUNMwIbENsMQErOFABwqsMe4yJb03d_Jw8TvxGSbhxYmXSfNCRdft1oX-_0cCiSUsoB8oIrsBaFo1L3jGMbvF0GMVlvQzNPAds9IA2mmL0dAxck9ZBggHq6Pu6Nh29jmBjpYBsMtV0ee-oG9nJP9WRN16y",
+            "imagen_principal": "images/proyectos/puerto_nizuc.jpg",
             "imagenes": [],
             "trabajos": [
                 {
@@ -78,21 +78,6 @@ const sapecoData = {
                     "cantidad": "4.600,00 Mts Aprox",
                     "detalle": ["3.500,00 Mts cañería de polietileno Ø75", "1.200,00 Mts cañería de polietileno Ø160", "3.500,00 Mts cañería de polietileno Ø63", "Todos unidos por electrofusión"]
                 }
-            ]
-        },
-        {
-            "id": "puerto-nizuc-etapa-comercial",
-            "nombre": "Puerto Nizuc - Ejecución Etapa Comercial",
-            "slug": "puerto-nizuc-etapa-comercial",
-            "ubicacion": "Hudson",
-            "periodo": "2022-2023",
-            "año_inicio": 2022,
-            "año_fin": 2023,
-            "en_curso": false,
-            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuDumrov7uV5WiH1y_jrUS5O6y7Muo0Im_yGIyRfBLqTTfWbD5cCNLh81CMsZR6swm89haYkpQnKt5S3sd-fxoYJ9SYRCee9ZQvdT3hTpPAtDHCefeOPBboZoRungRPn-m1QNqR78IoOQXFxY_EptMKkV4bYMceIbNE-1Mst9-ccZJfoKow_ryE_08wW617jLbB9WuhTPJGrXsBrEavdcxYOOqu6i0saI5uJOPTx8ZaIvXndKIv85pIvBbxU96oDnr1yXtdLvbWWkci3",
-            "imagenes": [],
-            "trabajos": [
-                { "tipo": "Red de Agua", "cantidad": "4.600,00 Mts Aprox", "detalle": ["Cañería de polietileno Ø160 unido por electrofusión"] }
             ]
         },
         {
@@ -104,7 +89,7 @@ const sapecoData = {
             "año_inicio": 2021,
             "año_fin": null,
             "en_curso": true,
-            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuAkmpD9mVnTWpgzhen2hsAuv0iXyJOX8hx6tkuxeapITf2f4XRQKmgHlNK9YE_jTWhk8eLHS4BvOEvYV0J5usvWp1BBtUIf3dWgBwqIE_0frzf571jlEAxiQpaoBPZvj0mE5q5q5tUXZrlBeseeE5_EqicaiC0IHdz2A80zsHG72nsJCgDhfX_pEUgowyWjQd4KUU66GkExNo47W4JzuQw694xPNKOxdZmu8Bs7hYAjSVQF2AmYKM_atr33tGowBlA9LpJ_hKXbA2ri",
+            "imagen_principal": "images/proyectos/azurra_tortugas.jpeg",
             "imagenes": [],
             "trabajos": [
                 { "tipo": "Red de Agua", "cantidad": "9.490,00 Mts", "detalle": ["Cañería de polietileno unido por electrofusión"] },
@@ -122,7 +107,7 @@ const sapecoData = {
             "año_inicio": 2021,
             "año_fin": 2022,
             "en_curso": false,
-            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuB-XvKxe53m2KCrcki0pCBR27UU4Tb7mWBbWUnAwd9zlleLSpLQI-tKXbIcpU9ok4XGaVHBlqoJWYYk6GpGvXkz9MTvLGWEQrJM4NIjSDzVvU7Z9H6tg3Y07My9WSupDBnvbHDFaPTMVe5F00bfS59teLb_bydrDrjRRySAX04x74xQq2Jx_FVVzN8_wGu3pRgF5CP6w0Dwbi6B8CQYhVcxud7zlCVC8hf6qopbBaiOW8zpa0C0M966XdOvFOX4iXo_RGoLvxmbc5Yi",
+            "imagen_principal": "images/proyectos/fincas_donvictor.jpeg",
             "imagenes": [],
             "trabajos": [
                 { "tipo": "Movimiento de suelo y calles", "cantidad": null, "detalle": ["Apertura de calles y entoscado", "Hormigón de base", "Cunetas e intertrabado"] },
@@ -142,7 +127,7 @@ const sapecoData = {
             "año_inicio": 2021,
             "año_fin": 2022,
             "en_curso": false,
-            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuAHmcqO50EHb0ogPv9yhIt53GI00rps_Afsd4SKo3N6N6VF-P-XAmQpH-GHOxLOXDAKznx-ExriGCmKPPaf1Tp6fNj_Pn2FQA5e0RLN-d_k051qscIbiNuw1FO7TxSizyeWJdl4X9s1Jbfluq6NtY3_7ImkhJ-lwBpA_5SVsFpvbl3ywHa5pfeocQ4GSTppzGaMiZmGy4kXktjjqwhmM6DEpda4wnWGYhzvNmcJI2EyKoWZyAofc2RmSx3ScV6OiR4M5sCvTb8FOy60",
+            "imagen_principal": "images/proyectos/parque_innovacion.jpg",
             "imagenes": [],
             "trabajos": [
                 { "tipo": "Movimiento de suelo y calles", "cantidad": null, "detalle": ["Apertura de calles y entoscado", "Hormigón de base", "Cunetas e intertrabado"] },
@@ -177,7 +162,7 @@ const sapecoData = {
             "año_inicio": 2019,
             "año_fin": 2020,
             "en_curso": false,
-            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuCEP9tKfRC25Urb4Zlnu53GMjvQxBszLZUFF4cpf6W7NH5M_l6mEMRua3HjHU0D4R_uHysxh4rlbAuGu2Rrx_6BXgJWx8cGpoViM3EYyDcSkimmt854K187pjeGM3uy_iSqRkVR43uPmr2KBXky21NP_ocfQ0cZZ50Wxx6Y7aNxOYKuATSoVWbDADc1k-UvPJqC10JBnKtW9JfiAbFv2aUro0xuKqP4xFhUOl5dJNtmTfngJ7QEkZnDEfXv5luBYE5cAt59FjU0P5JA",
+            "imagen_principal": "images/proyectos/barrio_iby.jpeg",
             "imagenes": [],
             "trabajos": [
                 { "tipo": "Red de Agua", "cantidad": null, "detalle": ["Cañería de polietileno unido por electrofusión"] },
@@ -185,6 +170,21 @@ const sapecoData = {
                 { "tipo": "Red de Pluvial", "cantidad": null, "detalle": ["Cañería de PVC junta segura", "Bocas de registro premoldeadas"] },
                 { "tipo": "Red Eléctrica", "cantidad": null, "detalle": ["Cables de 3*240/120", "Buzones de 3 y 4 vías", "Empalmes"] },
                 { "tipo": "Red de Tritubo", "cantidad": null, "detalle": ["Tritubos", "Cajas premoldeadas", "Hilo guía"] }
+            ]
+        },
+        {
+            "id": "puerto-nizuc-etapa-comercial",
+            "nombre": "Puerto Nizuc - Ejecución Etapa Comercial",
+            "slug": "puerto-nizuc-etapa-comercial",
+            "ubicacion": "Hudson",
+            "periodo": "2022-2023",
+            "año_inicio": 2022,
+            "año_fin": 2023,
+            "en_curso": false,
+            "imagen_principal": "images/proyectos/puerto_nizuc.jpg",
+            "imagenes": [],
+            "trabajos": [
+                { "tipo": "Red de Agua", "cantidad": "4.600,00 Mts Aprox", "detalle": ["Cañería de polietileno Ø160 unido por electrofusión"] }
             ]
         },
         {
@@ -196,7 +196,7 @@ const sapecoData = {
             "año_inicio": 2019,
             "año_fin": 2020,
             "en_curso": false,
-            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuAZ5r5ioa8IAs3pJQ5VEasNhaBzMvaYxDaug5Viww1JdqbMImdtJEwR2b5YrX7zLHtnkSlZjecYK816Ip9676xySQF1i8EFiA8f12CQxH0f-9ATRlisUnGUNMwIbENsMQErOFABwqsMe4yJb03d_Jw8TvxGSbhxYmXSfNCRdft1oX-_0cCiSUsoB8oIrsBaFo1L3jGMbvF0GMVlvQzNPAds9IA2mmL0dAxck9ZBggHq6Pu6Nh29jmBjpYBsMtV0ee-oG9nJP9WRN16y",
+            "imagen_principal": "images/proyectos/greenville.jpeg",
             "imagenes": [],
             "trabajos": [
                 { "tipo": "Red Eléctrica de media tensión", "cantidad": null, "detalle": ["Ejecución en Hotel", "Ejecución e instalación de cámaras transformadoras"] }
@@ -211,30 +211,14 @@ const sapecoData = {
             "año_inicio": 2016,
             "año_fin": 2017,
             "en_curso": false,
-            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuDumrov7uV5WiH1y_jrUS5O6y7Muo0Im_yGIyRfBLqTTfWbD5cCNLh81CMsZR6swm89haYkpQnKt5S3sd-fxoYJ9SYRCee9ZQvdT3hTpPAtDHCefeOPBboZoRungRPn-m1QNqR78IoOQXFxY_EptMKkV4bYMceIbNE-1Mst9-ccZJfoKow_ryE_08wW617jLbB9WuhTPJGrXsBrEavdcxYOOqu6i0saI5uJOPTx8ZaIvXndKIv85pIvBbxU96oDnr1yXtdLvbWWkci3",
+            "imagen_principal": "images/proyectos/santa_clara.jpeg",
             "imagenes": [],
             "trabajos": [
                 { "tipo": "Red de Cloacas", "cantidad": "11.750,00 mts", "detalle": ["Zanjeo", "Provisión de Materiales", "Bocas de Registro premoldeadas", "Tapas Reglamentarias"] },
                 { "tipo": "Red de Agua", "cantidad": "11.750 mts", "detalle": ["Zanjeo", "Provisión de Materiales", "Polietileno clase 10 unido por electrofusión", "Válvulas"] }
             ]
         },
-        {
-            "id": "hudson-park",
-            "nombre": "Hudson Park",
-            "slug": "hudson-park",
-            "ubicacion": "Berazategui",
-            "periodo": "2016",
-            "año_inicio": 2016,
-            "año_fin": 2016,
-            "en_curso": false,
-            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuAkmpD9mVnTWpgzhen2hsAuv0iXyJOX8hx6tkuxeapITf2f4XRQKmgHlNK9YE_jTWhk8eLHS4BvOEvYV0J5usvWp1BBtUIf3dWgBwqIE_0frzf571jlEAxiQpaoBPZvj0mE5q5q5tUXZrlBeseeE5_EqicaiC0IHdz2A80zsHG72nsJCgDhfX_pEUgowyWjQd4KUU66GkExNo47W4JzuQw694xPNKOxdZmu8Bs7hYAjSVQF2AmYKM_atr33tGowBlA9LpJ_hKXbA2ri",
-            "imagenes": [],
-            "trabajos": [
-                { "tipo": "Red de Cloacas", "cantidad": "7.500,00 mts", "detalle": ["Zanjeo", "Provisión de Materiales", "Bocas de Registro premoldeadas", "Tapas Reglamentarias"] },
-                { "tipo": "Red de Agua", "cantidad": "7.500,00 mts", "detalle": ["Zanjeo", "Provisión de Materiales", "Polietileno clase 10 unido por electrofusión", "Válvulas"] },
-                { "tipo": "Red de Gas Natural", "cantidad": "14.000,00 mts", "detalle": ["Cañería", "Zanjeo", "Provisión de Materiales", "Accesorios", "Malla de advertencia"] }
-            ]
-        },
+
         {
             "id": "barrio-las-golondrinas",
             "nombre": "Barrio Las Golondrinas",
@@ -244,7 +228,7 @@ const sapecoData = {
             "año_inicio": 2013,
             "año_fin": 2015,
             "en_curso": false,
-            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuB-XvKxe53m2KCrcki0pCBR27UU4Tb7mWBbWUnAwd9zlleLSpLQI-tKXbIcpU9ok4XGaVHBlqoJWYYk6GpGvXkz9MTvLGWEQrJM4NIjSDzVvU7Z9H6tg3Y07My9WSupDBnvbHDFaPTMVe5F00bfS59teLb_bydrDrjRRySAX04x74xQq2Jx_FVVzN8_wGu3pRgF5CP6w0Dwbi6B8CQYhVcxud7zlCVC8hf6qopbBaiOW8zpa0C0M966XdOvFOX4iXo_RGoLvxmbc5Yi",
+            "imagen_principal": "images/proyectos/las_golondrinas.jpeg",
             "imagenes": [],
             "trabajos": [
                 { "tipo": "Red de Cloacas", "cantidad": "4.200,00 mts", "detalle": ["Zanjeo", "Provisión de Materiales", "Bocas de Registro PREMOLDEADAS", "Tapas Reglamentarias hierro fundido"] },
@@ -262,7 +246,7 @@ const sapecoData = {
             "año_inicio": 2010,
             "año_fin": 2012,
             "en_curso": false,
-            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuAHmcqO50EHb0ogPv9yhIt53GI00rps_Afsd4SKo3N6N6VF-P-XAmQpH-GHOxLOXDAKznx-ExriGCmKPPaf1Tp6fNj_Pn2FQA5e0RLN-d_k051qscIbiNuw1FO7TxSizyeWJdl4X9s1Jbfluq6NtY3_7ImkhJ-lwBpA_5SVsFpvbl3ywHa5pfeocQ4GSTppzGaMiZmGy4kXktjjqwhmM6DEpda4wnWGYhzvNmcJI2EyKoWZyAofc2RmSx3ScV6OiR4M5sCvTb8FOy60",
+            "imagen_principal": "images/proyectos/nuevo_quilmes.jpeg",
             "imagenes": [],
             "trabajos": [
                 { "tipo": "Red de Cloacas", "cantidad": "11.000,00 mts", "detalle": ["Zanjeo", "Provisión de Materiales", "Bocas de Registro PREMOLDEADAS", "Tapas Reglamentarias hierro fundido"] },
@@ -278,7 +262,7 @@ const sapecoData = {
             "año_inicio": 2025,
             "año_fin": null,
             "en_curso": true,
-            "imagen_principal": "https://lh3.googleusercontent.com/aida-public/AB6AXuAHmcqO50EHb0ogPv9yhIt53GI00rps_Afsd4SKo3N6N6VF-P-XAmQpH-GHOxLOXDAKznx-ExriGCmKPPaf1Tp6fNj_Pn2FQA5e0RLN-d_k051qscIbiNuw1FO7TxSizyeWJdl4X9s1Jbfluq6NtY3_7ImkhJ-lwBpA_5SVsFpvbl3ywHa5pfeocQ4GSTppzGaMiZmGy4kXktjjqwhmM6DEpda4wnWGYhzvNmcJI2EyKoWZyAofc2RmSx3ScV6OiR4M5sCvTb8FOy60",
+            "imagen_principal": "images/proyectos/nuevo_quilmes_2.jpeg",
             "imagenes": [],
             "trabajos": [
                 { "tipo": "Agua Potable", "cantidad": null, "detalle": [] },
@@ -338,7 +322,7 @@ const sapecoData = {
         { "nombre": "Los Troncos", "logo": "images/los_troncos.png" },
         { "nombre": "Hudson Park", "logo": "images/hudson_pak.png" },
         { "nombre": "Parque Innovacion", "logo": "images/parque_innovacion.png" },
-        { "nombre": "Puerto Nizuc", "logo": "images/puerto_nizuc.jpg" },
+        { "nombre": "Puerto Nizuc", "logo": "images/puerto_nizuc.png" },
         { "nombre": "Azurra Tortugas", "logo": "images/azurra_tortugas.jpg" },
         { "nombre": "Nuevo Quilmes", "logo": "images/nuevo_quilmes.jpg" },
         { "nombre": "Greenville", "logo": "images/greenville.png" },
@@ -412,7 +396,7 @@ function renderEmpresa() {
             {
                 icon: 'engineering',
                 title: 'ING DE PRESICION',
-                desc: 'Nuestro equipo se especializa en la ejecucion de proyectos de infraestructura, tanto tecnicamente en la ejecucion de proyectos desde 0, resolviendo las inquietudes o problematicas de nuestros clientes y la ejecuicion de los mismos'
+                desc: 'Nuestro equipo se especializa en la ejecución de proyectos de infraestructura, tanto tecnicamente en la ejecución de proyectos desde 0, resolviendo las inquietudes o problematicas de nuestros clientes y la ejecución de los mismos'
             },
             {
                 icon: 'safety_check',
