@@ -199,7 +199,7 @@ const sapecoData = {
             "imagen_principal": "images/proyectos/greenville.jpeg",
             "imagenes": [],
             "trabajos": [
-                { "tipo": "Red Eléctrica de media tensión", "cantidad": null, "detalle": ["Ejecución en Hotel", "Ejecución e instalación de cámaras transformadoras"] }
+                { "tipo": "Red Eléctrica y Telefonía", "cantidad": null, "detalle": ["Ejecución en Hotel", "Ejecución e instalación de cámaras transformadoras"] }
             ]
         },
         {
